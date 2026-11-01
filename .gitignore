@@ -1,0 +1,6 @@
+.DS_Store
+Decks/
+*.pdf
+*.pptx
+*_backup.html
+tether_v*.html
