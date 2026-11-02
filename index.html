@@ -91,6 +91,117 @@
       animation: fadeIn 0.3s ease-out forwards;
     }
 
+    /* Venn Diagram Dynamic Switch Animation — Pure GPU Keyframes (Zero Glitch) */
+    @keyframes vennContainerPulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      35% {
+        transform: scale(0.975);
+        opacity: 0.8;
+      }
+      75% {
+        transform: scale(1.012);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes vennCircleLeftAnim {
+      0% {
+        transform: translateX(0);
+      }
+      35% {
+        transform: translateX(14px);
+      }
+      75% {
+        transform: translateX(-2px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes vennCircleRightAnim {
+      0% {
+        transform: translateX(0);
+      }
+      35% {
+        transform: translateX(-14px);
+      }
+      75% {
+        transform: translateX(2px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes vennCorePulseAnim {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      35% {
+        transform: scale(1.15);
+        opacity: 1;
+      }
+      75% {
+        transform: scale(0.99);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+    }
+
+    .venn-pulse-animation {
+      animation: vennContainerPulse 0.46s cubic-bezier(0.25, 1, 0.5, 1) both;
+      transform-origin: center center;
+      will-change: transform, opacity;
+    }
+
+    .venn-pulse-animation .venn-circle-left {
+      animation: vennCircleLeftAnim 0.46s cubic-bezier(0.25, 1, 0.5, 1) both;
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    .venn-pulse-animation .venn-circle-right {
+      animation: vennCircleRightAnim 0.46s cubic-bezier(0.25, 1, 0.5, 1) both;
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    .venn-pulse-animation .venn-core-ellipse {
+      animation: vennCorePulseAnim 0.46s cubic-bezier(0.25, 1, 0.5, 1) both;
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform, opacity;
+    }
+
+    .venn-text-anim {
+      transition: opacity 0.18s ease-in-out;
+    }
+    .venn-text-dimmed {
+      opacity: 0.2;
+    }
+
+    .tam-stat-card {
+      transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+    .tam-card-dimmed {
+      opacity: 0.4;
+      transform: translateY(3px);
+    }
+
     /* Hide horizontal scrollbar but preserve scrolling */
     .scrollbar-none::-webkit-scrollbar {
       display: none;
@@ -907,7 +1018,7 @@
     <section id="market" class="max-w-6xl mx-auto px-6 py-24 border-t border-white/[0.06]">
       
       <!-- Showcase Header -->
-      <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="text-center max-w-2xl mx-auto mb-6">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-gradient text-accent text-xs font-semibold tracking-wide uppercase mb-3">
           <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
           <span>TOTAL ADDRESSABLE MARKET</span>
@@ -918,78 +1029,75 @@
         <p class="text-xs sm:text-sm text-zinc-400 mt-2" id="tam-subtitle">
           Socio-demographic shift driving exponential demand for passive, dignity-first elder safety telemetry.
         </p>
-      </div>
-
-      <!-- 1. FULL-WIDTH ENLARGED VENN DIAGRAM -->
-      <div class="w-full bg-dark-card border border-white/[0.08] rounded-3xl p-6 sm:p-10 relative overflow-hidden text-center backdrop-blur-xl">
-        <!-- Ambient Glow -->
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-accent/15 blur-3xl rounded-full pointer-events-none"></div>
 
         <!-- Total Population Banner Pill -->
-        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-zinc-900/90 border border-white/10 text-xs font-semibold text-zinc-300 mb-6 shadow-md">
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-zinc-900/90 border border-white/10 text-xs font-semibold text-zinc-300 mt-5 shadow-md">
           <span class="text-zinc-500 uppercase tracking-wider text-[10px] font-bold">Total Seniors (65+):</span>
-          <span class="text-white font-extrabold text-sm" id="svg-total-val">112.5M Seniors</span>
-          <span class="text-accent text-xs font-medium" id="tam-pop-ratio">(7.6% of Pop.)</span>
+          <span class="text-white font-extrabold text-sm venn-text-anim" id="svg-total-val">112.5M Seniors</span>
+          <span class="text-accent text-xs font-medium venn-text-anim" id="tam-pop-ratio">(7.6% of Pop.)</span>
         </div>
+      </div>
 
-        <!-- Spacious, Enlarged SVG Venn Diagram (Scaled Up to 80% Container Width with Uncrowded Internal Text) -->
-        <div class="w-full max-w-5xl mx-auto py-4">
-          <svg viewBox="0 0 1000 540" class="w-full h-auto select-none max-h-[560px]" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="gradVennA" cx="40%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.30"/>
-                <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.05"/>
-              </radialGradient>
-              <radialGradient id="gradVennB" cx="60%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.35"/>
-                <stop offset="100%" stop-color="#E11D48" stop-opacity="0.06"/>
-              </radialGradient>
-              <radialGradient id="gradVennCore" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.85"/>
-                <stop offset="100%" stop-color="#FF5A1F" stop-opacity="0.2"/>
-              </radialGradient>
-              <filter id="glowVenn" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="10" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
+      <!-- 1. VENN DIAGRAM (NO OUTER RECTANGULAR CARD) -->
+      <div id="venn-diagram-container" class="w-full max-w-[820px] mx-auto py-1 relative text-center">
+        <!-- Ambient Glow behind diagram -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/15 blur-3xl rounded-full pointer-events-none"></div>
 
-            <!-- Outer Frame Guideline -->
-            <rect x="15" y="15" width="970" height="510" rx="36" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" stroke-dasharray="5 5" />
+        <svg id="tam-venn-svg" viewBox="0 0 1000 540" class="w-full h-auto select-none max-h-[440px] mx-auto relative z-10" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="gradVennA" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.30"/>
+              <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.05"/>
+            </radialGradient>
+            <radialGradient id="gradVennB" cx="60%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#E11D48" stop-opacity="0.06"/>
+            </radialGradient>
+            <radialGradient id="gradVennCore" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#FF5A1F" stop-opacity="0.2"/>
+            </radialGradient>
+            <filter id="glowVenn" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="10" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
 
-            <!-- Left Circle: Living Without Children (Enlarged r=240, spans x=100 to x=580) -->
-            <circle cx="340" cy="270" r="240" fill="url(#gradVennA)" stroke="#F59E0B" stroke-width="2.5" stroke-opacity="0.75" />
+          <!-- Outer Frame Guideline -->
+          <rect x="15" y="15" width="970" height="510" rx="36" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" stroke-dasharray="5 5" />
 
-            <!-- Right Circle: Single / Widowed (Enlarged r=240, spans x=420 to x=900) -->
-            <circle cx="660" cy="270" r="240" fill="url(#gradVennB)" stroke="#FF5A1F" stroke-width="2.5" stroke-opacity="0.8" />
+          <!-- Left Circle: Living Without Children -->
+          <circle cx="340" cy="270" r="240" fill="url(#gradVennA)" stroke="#F59E0B" stroke-width="2.5" stroke-opacity="0.75" class="venn-circle-left" />
 
-            <!-- Center Overlap Ellipse with Core Glow -->
-            <ellipse cx="500" cy="270" rx="90" ry="190" fill="url(#gradVennCore)" filter="url(#glowVenn)" />
+          <!-- Right Circle: Single / Widowed -->
+          <circle cx="660" cy="270" r="240" fill="url(#gradVennB)" stroke="#FF5A1F" stroke-width="2.5" stroke-opacity="0.8" class="venn-circle-right" />
 
-            <!-- Center Core Pulse Indicator -->
-            <circle cx="500" cy="230" r="8" fill="#FFFFFF" />
-            <circle cx="500" cy="230" r="16" fill="none" stroke="#FF5A1F" stroke-width="2" class="animate-ping" style="transform-origin: 500px 230px;" />
+          <!-- Center Overlap Ellipse with Core Glow -->
+          <ellipse cx="500" cy="270" rx="90" ry="190" fill="url(#gradVennCore)" filter="url(#glowVenn)" class="venn-core-ellipse" />
 
-            <!-- Left Circle Label & Value (Spacious Internal Text) -->
-            <text x="240" y="246" fill="#FDE68A" font-size="16" font-weight="700" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">Living Without Children</text>
-            <text x="240" y="272" fill="#A1A1AA" font-size="12" font-weight="500" text-anchor="middle">Independent Household</text>
-            <text x="240" y="312" id="svg-indep-val" fill="#FFFFFF" font-size="28" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">39M (26%)</text>
+          <!-- Center Core Pulse Indicator -->
+          <circle cx="500" cy="230" r="8" fill="#FFFFFF" />
+          <circle cx="500" cy="230" r="16" fill="none" stroke="#FF5A1F" stroke-width="2" class="animate-ping" style="transform-origin: 500px 230px;" />
 
-            <!-- Right Circle Label & Value (Spacious Internal Text) -->
-            <text x="760" y="246" fill="#FED7AA" font-size="16" font-weight="700" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">Single / Widowed</text>
-            <text x="760" y="272" fill="#A1A1AA" font-size="12" font-weight="500" text-anchor="middle">Solitary Living</text>
-            <text x="760" y="312" id="svg-single-val" fill="#FFFFFF" font-size="28" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">~40M (36%)</text>
+          <!-- Left Circle Label & Value (Spacious Internal Text) -->
+          <text x="240" y="246" fill="#FDE68A" font-size="16" font-weight="700" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">Living Without Children</text>
+          <text x="240" y="272" fill="#A1A1AA" font-size="12" font-weight="500" text-anchor="middle">Independent Household</text>
+          <text x="240" y="312" id="svg-indep-val" fill="#FFFFFF" font-size="28" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" class="venn-text-anim">39M (26%)</text>
 
-            <!-- Center Overlap Label & Value -->
-            <text x="500" y="268" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">SOLO UNASSISTED</text>
-            <text x="500" y="296" id="svg-core-val" fill="#FFFFFF" font-size="22" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">~18M Seniors</text>
-            <text x="500" y="320" fill="#FF5A1F" font-size="10" font-weight="700" text-anchor="middle">PRIMARY BEACHHEAD</text>
-          </svg>
-        </div>
+          <!-- Right Circle Label & Value (Spacious Internal Text) -->
+          <text x="760" y="246" fill="#FED7AA" font-size="16" font-weight="700" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">Single / Widowed</text>
+          <text x="760" y="272" fill="#A1A1AA" font-size="12" font-weight="500" text-anchor="middle">Solitary Living</text>
+          <text x="760" y="312" id="svg-single-val" fill="#FFFFFF" font-size="28" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" class="venn-text-anim">~40M (36%)</text>
+
+          <!-- Center Overlap Label & Value -->
+          <text x="500" y="268" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">SOLO UNASSISTED</text>
+          <text x="500" y="296" id="svg-core-val" fill="#FFFFFF" font-size="22" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" class="venn-text-anim">~18M Seniors</text>
+          <text x="500" y="320" fill="#FF5A1F" font-size="10" font-weight="700" text-anchor="middle">PRIMARY BEACHHEAD</text>
+        </svg>
       </div>
 
       <!-- 2. REGION SWITCHER BUTTONS DIRECTLY UNDER VENN DIAGRAM -->
-      <div class="mt-8 flex justify-center">
+      <div class="mt-6 flex justify-center">
         <div class="inline-flex items-center gap-1.5 p-1 bg-zinc-950/90 border border-white/15 rounded-full backdrop-blur-xl shadow-lg flex-wrap justify-center">
           <button 
             id="btn-tam-india" 
@@ -1026,7 +1134,7 @@
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
         
         <!-- Rectangle 1: Immediate Base -->
-        <div class="bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
+        <div class="tam-stat-card bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
           <div class="flex items-center justify-between">
             <span class="text-[10px] uppercase font-bold tracking-wider text-accent px-2 py-0.5 rounded-md bg-accent/10 border border-accent/20">
               Immediate Base
@@ -1043,7 +1151,7 @@
         </div>
 
         <!-- Rectangle 2: 2050 Horizon -->
-        <div class="bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
+        <div class="tam-stat-card bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
           <div class="flex items-center justify-between">
             <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-400 px-2 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20">
               2050 Horizon
@@ -1060,7 +1168,7 @@
         </div>
 
         <!-- Rectangle 3: Independent Living -->
-        <div class="bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
+        <div class="tam-stat-card bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
           <div class="flex items-center justify-between">
             <span class="text-[10px] uppercase font-bold tracking-wider text-amber-400 px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20">
               Nuclear Shift
@@ -1077,7 +1185,7 @@
         </div>
 
         <!-- Rectangle 4: Single & Widowed Households -->
-        <div class="bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
+        <div class="tam-stat-card bg-dark-card orange-card-border p-5 rounded-2xl relative overflow-hidden group">
           <div class="flex items-center justify-between">
             <span class="text-[10px] uppercase font-bold tracking-wider text-rose-400 px-2 py-0.5 rounded-md bg-rose-500/10 border border-rose-500/20">
               High Vulnerability
@@ -1617,6 +1725,8 @@
 
     const tamRegionKeys = ['india', 'china', 'japan', 'global'];
 
+    let tamAnimTimeout = null;
+
     function setTamRegion(region) {
       const data = tamDatasets[region];
       if (!data) return;
@@ -1625,43 +1735,72 @@
         const btn = document.getElementById(`btn-tam-${r}`);
         if (!btn) return;
         if (r === region) {
-          btn.className = 'flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full bg-accent text-white text-xs font-semibold shadow-inner transition-all duration-300';
+          btn.className = 'flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full bg-accent text-white text-xs font-semibold shadow-inner transition-all duration-300 scale-105';
         } else {
-          btn.className = 'flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300';
+          btn.className = 'flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300 hover:scale-100';
         }
       });
 
-      // Update subtitle
-      const subtitleEl = document.getElementById('tam-subtitle');
-      if (subtitleEl) subtitleEl.textContent = data.subtitle;
+      // Clear any pending timeout from fast rapid clicks
+      if (tamAnimTimeout) clearTimeout(tamAnimTimeout);
 
-      // Update simplified Venn values
-      document.getElementById('svg-total-val').textContent = data.totalVal;
-      document.getElementById('tam-pop-ratio').textContent = data.popRatio;
-      document.getElementById('svg-indep-val').textContent = data.indepVal;
-      document.getElementById('svg-single-val').textContent = data.singleVal;
-      document.getElementById('svg-core-val').textContent = data.coreVal;
+      // Trigger GPU-accelerated keyframe animation
+      const svg = document.getElementById('tam-venn-svg');
+      if (svg) {
+        svg.classList.remove('venn-pulse-animation');
+        void svg.offsetWidth; // trigger reflow to reliably restart keyframe animation
+        svg.classList.add('venn-pulse-animation');
+      }
 
-      // Update 4 Statistics Rectangles
-      document.getElementById('tam-stat1-val').textContent = data.stat1.val;
-      document.getElementById('tam-stat1-pct').textContent = data.stat1.pct;
-      document.getElementById('tam-stat1-title').textContent = data.stat1.title;
-      document.getElementById('tam-stat1-desc').textContent = data.stat1.desc;
+      // Smooth text & card cross-fade via CSS classes (no inline transform glitches)
+      const textAnimEls = document.querySelectorAll('.venn-text-anim');
+      const statCards = document.querySelectorAll('.tam-stat-card');
 
-      document.getElementById('tam-stat2-val').textContent = data.stat2.val;
-      document.getElementById('tam-stat2-pct').textContent = data.stat2.pct;
-      document.getElementById('tam-stat2-title').textContent = data.stat2.title;
-      document.getElementById('tam-stat2-desc').textContent = data.stat2.desc;
+      textAnimEls.forEach(el => el.classList.add('venn-text-dimmed'));
+      statCards.forEach(c => c.classList.add('tam-card-dimmed'));
 
-      document.getElementById('tam-stat3-val').textContent = data.stat3.val;
-      document.getElementById('tam-stat3-pct').textContent = data.stat3.pct;
-      document.getElementById('tam-stat3-title').textContent = data.stat3.title;
-      document.getElementById('tam-stat3-desc').textContent = data.stat3.desc;
+      setTimeout(() => {
+        // Update subtitle
+        const subtitleEl = document.getElementById('tam-subtitle');
+        if (subtitleEl) subtitleEl.textContent = data.subtitle;
 
-      document.getElementById('tam-stat4-val').textContent = data.stat4.val;
-      document.getElementById('tam-stat4-pct').textContent = data.stat4.pct;
-      document.getElementById('tam-stat4-title').textContent = data.stat4.title;
-      document.getElementById('tam-stat4-desc').textContent = data.stat4.desc;
+        // Update simplified Venn values
+        document.getElementById('svg-total-val').textContent = data.totalVal;
+        document.getElementById('tam-pop-ratio').textContent = data.popRatio;
+        document.getElementById('svg-indep-val').textContent = data.indepVal;
+        document.getElementById('svg-single-val').textContent = data.singleVal;
+        document.getElementById('svg-core-val').textContent = data.coreVal;
+
+        // Update 4 Statistics Rectangles
+        document.getElementById('tam-stat1-val').textContent = data.stat1.val;
+        document.getElementById('tam-stat1-pct').textContent = data.stat1.pct;
+        document.getElementById('tam-stat1-title').textContent = data.stat1.title;
+        document.getElementById('tam-stat1-desc').textContent = data.stat1.desc;
+
+        document.getElementById('tam-stat2-val').textContent = data.stat2.val;
+        document.getElementById('tam-stat2-pct').textContent = data.stat2.pct;
+        document.getElementById('tam-stat2-title').textContent = data.stat2.title;
+        document.getElementById('tam-stat2-desc').textContent = data.stat2.desc;
+
+        document.getElementById('tam-stat3-val').textContent = data.stat3.val;
+        document.getElementById('tam-stat3-pct').textContent = data.stat3.pct;
+        document.getElementById('tam-stat3-title').textContent = data.stat3.title;
+        document.getElementById('tam-stat3-desc').textContent = data.stat3.desc;
+
+        document.getElementById('tam-stat4-val').textContent = data.stat4.val;
+        document.getElementById('tam-stat4-pct').textContent = data.stat4.pct;
+        document.getElementById('tam-stat4-title').textContent = data.stat4.title;
+        document.getElementById('tam-stat4-desc').textContent = data.stat4.desc;
+
+        // Restore text & card opacity smoothly
+        textAnimEls.forEach(el => el.classList.remove('venn-text-dimmed'));
+        statCards.forEach(c => c.classList.remove('tam-card-dimmed'));
+      }, 140);
+
+      // Animation naturally returns to 0px/scale 1.0 at 100%, safely remove class
+      tamAnimTimeout = setTimeout(() => {
+        if (svg) svg.classList.remove('venn-pulse-animation');
+      }, 480);
     }
 
     // ================= 7 VITALS 4:3 MULTI-CARD CAROUSEL CONTROLLER =================
