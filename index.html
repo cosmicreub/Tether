@@ -849,7 +849,7 @@
       <div class="text-center max-w-2xl mx-auto mb-10">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-gradient text-accent text-xs font-semibold tracking-wide uppercase mb-3">
           <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-          <span id="tam-region-title">Demographic Opportunity: India TAM</span>
+          <span>TOTAL ADDRESSABLE MARKET</span>
         </div>
         <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
           Aging Demographics at Massive Scale
@@ -929,20 +929,34 @@
 
       <!-- 2. REGION SWITCHER BUTTONS DIRECTLY UNDER VENN DIAGRAM -->
       <div class="mt-8 flex justify-center">
-        <div class="inline-flex items-center gap-1.5 p-1 bg-zinc-950/90 border border-white/15 rounded-full backdrop-blur-xl shadow-lg">
+        <div class="inline-flex items-center gap-1.5 p-1 bg-zinc-950/90 border border-white/15 rounded-full backdrop-blur-xl shadow-lg flex-wrap justify-center">
           <button 
             id="btn-tam-india" 
             onclick="setTamRegion('india')"
-            class="flex items-center gap-1.5 px-6 py-2 rounded-full bg-accent text-white text-xs font-semibold shadow-inner transition-all duration-300"
+            class="flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full bg-accent text-white text-xs font-semibold shadow-inner transition-all duration-300"
           >
-            <span>🇮🇳 India TAM</span>
+            <span>🇮🇳 India</span>
+          </button>
+          <button 
+            id="btn-tam-china" 
+            onclick="setTamRegion('china')"
+            class="flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300"
+          >
+            <span>🇨🇳 China</span>
+          </button>
+          <button 
+            id="btn-tam-japan" 
+            onclick="setTamRegion('japan')"
+            class="flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300"
+          >
+            <span>🇯🇵 Japan</span>
           </button>
           <button 
             id="btn-tam-global" 
             onclick="setTamRegion('global')"
-            class="flex items-center gap-1.5 px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300"
+            class="flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300"
           >
-            <span>🌐 Global TAM</span>
+            <span>🌐 Global</span>
           </button>
         </div>
       </div>
@@ -1446,10 +1460,9 @@
   <script>
     lucide.createIcons();
 
-    // ================= TAM REGION SWITCHER LOGIC (INDIA VS GLOBAL) =================
+    // ================= TAM REGION SWITCHER LOGIC (INDIA, CHINA, JAPAN, GLOBAL) =================
     const tamDatasets = {
       india: {
-        regionTitle: 'Demographic Opportunity: India TAM',
         subtitle: 'Socio-demographic shift driving exponential demand for passive, dignity-first elder safety telemetry.',
         popRatio: '(7.6% of Pop.)',
         totalVal: '112.5M Seniors',
@@ -1461,8 +1474,31 @@
         stat3: { val: '39 Million', pct: '26% Ratio', title: 'Living Without Resident Children', desc: 'Seniors managing independent residences without in-home family support.' },
         stat4: { val: '~40 Million', pct: '36% of Seniors', title: 'Single & Surviving Spouse Households', desc: 'Solo-occupant elder households facing acute risk during falls and syncopes.' }
       },
+      china: {
+        subtitle: 'Massive demographic transition and one-child family inversion creating over 120M empty-nest households across a 1.41B population.',
+        popRatio: '(15.4% of Pop.)',
+        totalVal: '223.6M Seniors',
+        indepVal: '~120M (54%)',
+        singleVal: '~56M (25%)',
+        coreVal: '~32M Seniors',
+        stat1: { val: '223.6M', pct: '15.4% of Pop.', title: 'Seniors Aged 65+', desc: 'World’s largest senior cohort managing accelerating old-age dependency (NBS).' },
+        stat2: { val: '395M', pct: '~30% of Nation', title: 'Projected Elder Base by 2050', desc: 'Nearly 1 in 3 citizens will be 65+, establishing the "Silver Economy" as a national priority.' },
+        stat3: { val: '120 Million', pct: '~54% Ratio', title: 'Living Without Resident Children', desc: 'The 4-2-1 family inversion leaves over half of Chinese seniors in independent, empty-nest homes.' },
+        stat4: { val: '~56 Million', pct: '25% of Seniors', title: 'Single & Solo Senior Households', desc: 'Older adults living completely alone without immediate in-home family, facing acute fall risks.' }
+      },
+      japan: {
+        subtitle: 'World’s leading super-aged society where nearly 1 in 3 citizens is 65+, accelerating demand to protect solitary elder households.',
+        popRatio: '(29.3% of Pop.)',
+        totalVal: '36.25M Seniors',
+        indepVal: '23.4M (64.5%)',
+        singleVal: '~11.8M (32.7%)',
+        coreVal: '~9.3M Seniors',
+        stat1: { val: '36.25M', pct: '29.3% of Pop.', title: 'Seniors Aged 65+', desc: 'The world’s highest national senior population density, defining the super-aged frontier (IPSS).' },
+        stat2: { val: '39.7M', pct: '37.7% Density', title: 'Projected Senior Ratio by 2050', desc: 'Nearly 40% of Japan’s population will be 65+ as the workforce contracts, requiring passive care.' },
+        stat3: { val: '23.4 Million', pct: '64.5% Ratio', title: 'Independent Senior Households', desc: 'Dissolution of multi-generation homes leaves ~65% of elders in single or couple-only households.' },
+        stat4: { val: '~11.8 Million', pct: '32.7% of Elders', title: 'Single-Person Senior Households', desc: 'Over 9.3M seniors living completely alone, confronting severe risks of unmonitored solitary accidents.' }
+      },
       global: {
-        regionTitle: 'Demographic Opportunity: Global TAM',
         subtitle: 'Worldwide demographic transition creating an unprecedented global longevity economy across 8.2B population.',
         popRatio: '(10.2% of Pop.)',
         totalVal: '840M Seniors',
@@ -1476,24 +1512,25 @@
       }
     };
 
+    const tamRegionKeys = ['india', 'china', 'japan', 'global'];
+
     function setTamRegion(region) {
       const data = tamDatasets[region];
       if (!data) return;
 
-      const btnIndia = document.getElementById('btn-tam-india');
-      const btnGlobal = document.getElementById('btn-tam-global');
+      tamRegionKeys.forEach(r => {
+        const btn = document.getElementById(`btn-tam-${r}`);
+        if (!btn) return;
+        if (r === region) {
+          btn.className = 'flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full bg-accent text-white text-xs font-semibold shadow-inner transition-all duration-300';
+        } else {
+          btn.className = 'flex items-center gap-1.5 px-5 sm:px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300';
+        }
+      });
 
-      if (region === 'india') {
-        btnIndia.className = 'flex items-center gap-1.5 px-6 py-2 rounded-full bg-accent text-white text-xs font-semibold shadow-inner transition-all duration-300';
-        btnGlobal.className = 'flex items-center gap-1.5 px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300';
-      } else {
-        btnGlobal.className = 'flex items-center gap-1.5 px-6 py-2 rounded-full bg-accent text-white text-xs font-semibold shadow-inner transition-all duration-300';
-        btnIndia.className = 'flex items-center gap-1.5 px-6 py-2 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300';
-      }
-
-      // Update header
-      document.getElementById('tam-region-title').textContent = data.regionTitle;
-      document.getElementById('tam-subtitle').textContent = data.subtitle;
+      // Update subtitle
+      const subtitleEl = document.getElementById('tam-subtitle');
+      if (subtitleEl) subtitleEl.textContent = data.subtitle;
 
       // Update simplified Venn values
       document.getElementById('svg-total-val').textContent = data.totalVal;
