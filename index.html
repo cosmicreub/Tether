@@ -115,6 +115,19 @@
       mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 85%);
       -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 85%);
     }
+
+    /* Prevent mobile horizontal page viewport shifting */
+    html {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      position: relative;
+    }
   </style>
 </head>
 <body class="bg-dark-base text-zinc-300 font-sans antialiased selection:bg-accent selection:text-white overflow-x-hidden w-full">
@@ -291,56 +304,56 @@
         <!-- Ambient Radial Glow Halo (Luminous Orange Backlight) -->
         <div class="absolute w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] product-backlight blur-3xl rounded-full pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 animate-pulse opacity-95" style="animation-duration: 4s;"></div>
 
-        <!-- Floating 3D Device Image with Snug Surrounding Badges -->
-        <div class="relative py-6 sm:py-10 flex items-center justify-center z-10 overflow-hidden">
+        <!-- Floating 3D Device Image with Ample Breathing Room for Badges -->
+        <div class="relative py-8 sm:py-16 flex items-center justify-center z-10">
           
           <div class="relative inline-flex items-center justify-center animate-float">
             <!-- Centerpiece Band Image -->
             <img 
               src="tethertransparent.png" 
               alt="Tether Screenless Biometric Strap" 
-              class="max-h-[220px] sm:max-h-[380px] w-auto object-contain filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] hover:scale-105 transition-transform duration-500 cursor-pointer"
+              class="max-h-[180px] sm:max-h-[380px] w-auto object-contain filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] hover:scale-105 transition-transform duration-500 cursor-pointer"
             />
 
-            <!-- 7 Layer Labels (Responsive Snug Spacing) -->
+            <!-- 7 Layer Labels (Positioned Away From Product Image) -->
             <!-- 1. Fall Detection (Top Left) -->
-            <button onclick="jumpToVitalCard(0)" class="absolute -top-2.5 left-0 sm:-left-8 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-accent/50 text-[9px] sm:text-[11px] font-semibold text-white shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap">
+            <button onclick="jumpToVitalCard(0)" class="absolute -top-3 sm:-top-6 -left-6 sm:-left-36 md:-left-48 lg:-left-56 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-accent/50 text-[9px] sm:text-[11px] font-semibold text-white shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <span class="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_8px_#FF5A1F] animate-pulse"></span>
               <span>1. Fall Detection</span>
             </button>
 
             <!-- 2. NFC Passport (Top Right) -->
-            <button onclick="jumpToVitalCard(1)" class="absolute -top-2.5 right-0 sm:-right-8 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-emerald-500/50 text-[9px] sm:text-[11px] font-semibold text-emerald-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-emerald-400 hover:scale-105 transition group whitespace-nowrap">
+            <button onclick="jumpToVitalCard(1)" class="absolute -top-3 sm:-top-6 -right-6 sm:-right-36 md:-right-48 lg:-right-56 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-emerald-500/50 text-[9px] sm:text-[11px] font-semibold text-emerald-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-emerald-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="radio" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-emerald-400"></i>
               <span>2. NFC Passport</span>
             </button>
 
             <!-- 3. Find My & Relay (Middle Left) -->
-            <button onclick="jumpToVitalCard(2)" class="absolute top-[38%] -left-1 sm:-left-16 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-white/10 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap">
+            <button onclick="jumpToVitalCard(2)" class="absolute top-[38%] -left-8 sm:-left-44 md:-left-56 lg:-left-64 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-white/10 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="map-pin" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-accent"></i>
               <span>3. Find My</span>
             </button>
 
             <!-- 4. Tactile SOS Button (Middle Right) -->
-            <button onclick="jumpToVitalCard(3)" class="absolute top-[38%] -right-1 sm:-right-16 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-white/10 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap">
+            <button onclick="jumpToVitalCard(3)" class="absolute top-[38%] -right-8 sm:-right-44 md:-right-56 lg:-right-64 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-white/10 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="fingerprint" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-accent"></i>
               <span>4. SOS Button</span>
             </button>
 
             <!-- 5. Skin Temp (Bottom Left) -->
-            <button onclick="jumpToVitalCard(4)" class="absolute bottom-5 left-0 sm:-left-8 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-amber-400/40 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-amber-400 hover:scale-105 transition group whitespace-nowrap">
+            <button onclick="jumpToVitalCard(4)" class="absolute bottom-4 sm:bottom-6 -left-6 sm:-left-36 md:-left-48 lg:-left-56 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-amber-400/40 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-amber-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="thermometer" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-400"></i>
               <span>5. Skin Temp</span>
             </button>
 
             <!-- 6. Blood Pressure (Bottom Right) -->
-            <button onclick="jumpToVitalCard(5)" class="absolute bottom-5 right-0 sm:-right-8 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-cyan-400/40 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-cyan-400 hover:scale-105 transition group whitespace-nowrap">
+            <button onclick="jumpToVitalCard(5)" class="absolute bottom-4 sm:bottom-6 -right-6 sm:-right-36 md:-right-48 lg:-right-56 z-20 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-cyan-400/40 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-cyan-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="activity" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-cyan-400"></i>
               <span>6. BP Range</span>
             </button>
 
             <!-- 7. Continuous HR & HRV (Bottom Center) -->
-            <button onclick="jumpToVitalCard(6)" class="absolute -bottom-3 left-1/2 -translate-x-1/2 z-20 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-zinc-950/95 backdrop-blur-md border border-rose-500/50 text-[9px] sm:text-[11px] font-semibold text-rose-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-rose-400 hover:scale-105 transition group whitespace-nowrap">
+            <button onclick="jumpToVitalCard(6)" class="absolute -bottom-6 sm:-bottom-9 left-1/2 -translate-x-1/2 z-20 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-zinc-950/95 backdrop-blur-md border border-rose-500/50 text-[9px] sm:text-[11px] font-semibold text-rose-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-rose-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="heart" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-rose-500"></i>
               <span>7. HR & HRV</span>
             </button>
@@ -369,16 +382,6 @@
             <i data-lucide="droplet" class="w-3.5 sm:w-4 h-3.5 sm:h-4 text-cyan-400 mb-1.5 sm:mb-2"></i>
             <h4 class="text-[11px] sm:text-xs font-bold text-white">IP68 Waterproof</h4>
             <p class="text-[9px] sm:text-[10px] text-zinc-400 mt-0.5">Shower & bath safe</p>
-          </div>
-        </div>
-
-      </div>
-            <p class="text-[10px] text-zinc-400 mt-0.5">Instant paramedic triage without battery</p>
-          </div>
-          <div class="p-3.5 rounded-xl bg-zinc-950/60 border border-white/5">
-            <i data-lucide="droplet" class="w-4 h-4 text-cyan-400 mb-2"></i>
-            <h4 class="text-xs font-bold text-white">IP68 Waterproof</h4>
-            <p class="text-[10px] text-zinc-400 mt-0.5">Never taken off in showers or baths</p>
           </div>
         </div>
 
@@ -443,7 +446,7 @@
       </div>
 
       <!-- Continuous Carousel Stage with Panoramic Orange Telemetry Glow -->
-      <div class="relative py-4 -my-4">
+      <div class="relative py-4 -my-4 overflow-hidden">
         <!-- Technical Dot Grid (Notebook Pattern Behind Carousel Cards) -->
         <div class="absolute inset-0 tech-dot-grid-carousel pointer-events-none z-0"></div>
 
@@ -1479,6 +1482,8 @@
     let cardWidth = 0;
     let setWidth = 0;
     let isCarouselInitialized = false;
+    let isUserDragging = false;
+    let boundaryResetTimer = null;
 
     function getCenterOffset() {
       const track = document.getElementById('vitals-track');
@@ -1538,15 +1543,59 @@
       // Re-enable snapping and smooth scrolling
       setTimeout(() => {
         track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+        track.style.scrollBehavior = '';
       }, 50);
+
+      // Touch drag detection to avoid jarring teleport jumps during touch
+      track.addEventListener('touchstart', () => {
+        isUserDragging = true;
+        clearTimeout(boundaryResetTimer);
+      }, { passive: true });
+
+      track.addEventListener('touchend', () => {
+        isUserDragging = false;
+        scheduleBoundaryReset(150);
+      }, { passive: true });
+
+      track.addEventListener('touchcancel', () => {
+        isUserDragging = false;
+        scheduleBoundaryReset(150);
+      }, { passive: true });
+
+      // Manual scroll listener (for trackpad, mouse, and touch swipe)
+      let scrollDebounce;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollDebounce);
+        scrollDebounce = setTimeout(() => {
+          updateCarouselMetrics();
+          if (setWidth === 0 || cardWidth === 0) return;
+          const centerOffset = getCenterOffset();
+
+          // Calculate which card is closest to the middle of the carousel viewport
+          const centerScroll = track.scrollLeft + centerOffset;
+          const rawIndex = Math.round(centerScroll / cardWidth);
+          const normalizedIndex = ((rawIndex % totalVitalCards) + totalVitalCards) % totalVitalCards;
+          currentVitalIndex = normalizedIndex;
+          updateActivePill(normalizedIndex);
+
+          if (!isUserDragging) {
+            scheduleBoundaryReset(120);
+          }
+        }, 60);
+      }, { passive: true });
     }
 
     function updateCarouselMetrics() {
       const track = document.getElementById('vitals-track');
       if (!track) return;
-      const card = track.querySelector('.vital-card');
-      if (card) {
-        cardWidth = card.offsetWidth + 24; // 24px gap (gap-6)
+      const cards = track.querySelectorAll('.vital-card');
+      if (cards.length >= 2) {
+        // Measure real distance between card 0 and card 1 (accurately respects gap-4 on mobile and gap-6 on desktop)
+        cardWidth = cards[1].offsetLeft - cards[0].offsetLeft;
+        setWidth = cardWidth * totalVitalCards;
+      } else if (cards.length === 1) {
+        const gap = window.innerWidth < 640 ? 16 : 24;
+        cardWidth = cards[0].offsetWidth + gap;
         setWidth = cardWidth * totalVitalCards;
       }
     }
@@ -1561,7 +1610,7 @@
 
       currentVitalIndex = ((currentVitalIndex + direction) % totalVitalCards + totalVitalCards) % totalVitalCards;
       updateActivePill(currentVitalIndex);
-      checkBoundaryDebounced();
+      scheduleBoundaryReset(450);
     }
 
     function jumpToVitalCard(targetIndex) {
@@ -1569,12 +1618,14 @@
       if (!track) return;
       updateCarouselMetrics();
 
-      // If called from hero wristband tags outside telemetry viewport, bring showcase into view
+      // If called from hero wristband tags outside telemetry viewport, bring showcase into view without window shifting
       const showcase = document.getElementById('telemetry-showcase');
       if (showcase) {
         const rect = showcase.getBoundingClientRect();
-        if (rect.top < -200 || rect.top > window.innerHeight) {
-          showcase.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (rect.top < -120 || rect.top > window.innerHeight) {
+          const navOffset = 75;
+          const targetY = rect.top + window.pageYOffset - navOffset;
+          window.scrollTo({ top: targetY, left: 0, behavior: 'smooth' });
         }
       }
 
@@ -1603,43 +1654,51 @@
 
       currentVitalIndex = targetIndex;
       updateActivePill(targetIndex);
-      checkBoundaryDebounced();
+      scheduleBoundaryReset(450);
     }
 
-    let boundaryTimeout;
-    function checkBoundaryDebounced() {
-      clearTimeout(boundaryTimeout);
-      boundaryTimeout = setTimeout(() => {
-        const track = document.getElementById('vitals-track');
-        if (!track || setWidth === 0) return;
-        const centerOffset = getCenterOffset();
+    function scheduleBoundaryReset(delay = 150) {
+      clearTimeout(boundaryResetTimer);
+      boundaryResetTimer = setTimeout(() => {
+        executeBoundaryReset();
+      }, delay);
+    }
 
-        // Reset if scrolled past middle set into trailing clones
-        if (track.scrollLeft >= (setWidth * 2) - centerOffset - (cardWidth / 2)) {
-          track.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
-          track.scrollLeft -= setWidth;
-          setTimeout(() => {
-            track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
-          }, 40);
-        } 
-        // Reset if scrolled before middle set into leading clones
-        else if (track.scrollLeft < setWidth - centerOffset - (cardWidth / 2)) {
-          track.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
-          track.scrollLeft += setWidth;
-          setTimeout(() => {
-            track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
-          }, 40);
-        }
-      }, 420);
+    function executeBoundaryReset() {
+      if (isUserDragging) return;
+      const track = document.getElementById('vitals-track');
+      if (!track || setWidth === 0) return;
+      const centerOffset = getCenterOffset();
+
+      // Scrolled past Set 1 into trailing clones (Set 2)
+      if (track.scrollLeft >= (setWidth * 2) - centerOffset - (cardWidth / 2)) {
+        track.style.scrollBehavior = 'auto';
+        track.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+        track.scrollLeft -= setWidth;
+        requestAnimationFrame(() => {
+          track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+          track.style.scrollBehavior = '';
+        });
+      } 
+      // Scrolled before Set 1 into leading clones (Set 0)
+      else if (track.scrollLeft < setWidth - centerOffset - (cardWidth / 2)) {
+        track.style.scrollBehavior = 'auto';
+        track.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+        track.scrollLeft += setWidth;
+        requestAnimationFrame(() => {
+          track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+          track.style.scrollBehavior = '';
+        });
+      }
     }
 
     function updateActivePill(index) {
       const pills = document.querySelectorAll('.vital-jump-btn');
       pills.forEach((pill, i) => {
         if (i === index) {
-          pill.className = 'vital-jump-btn px-4 py-2 rounded-full text-xs font-semibold bg-accent text-white shadow-inner transition whitespace-nowrap';
+          pill.className = 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-accent text-white shadow-inner transition whitespace-nowrap cursor-pointer';
         } else {
-          pill.className = 'vital-jump-btn px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap';
+          pill.className = 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap cursor-pointer';
         }
       });
 
@@ -1648,65 +1707,21 @@
         indicator.textContent = `Layer 0${index + 1} / 07`;
       }
 
-      // Ensure active pill is visible in container on mobile
+      // Safely center the active pill in vital-pill-container WITHOUT ever calling scrollIntoView on the document
       const pillContainer = document.querySelector('.vital-pill-container');
       if (pillContainer && pills[index]) {
         const pill = pills[index];
-        const containerLeft = pillContainer.scrollLeft;
-        const containerRight = containerLeft + pillContainer.offsetWidth;
-        const pillLeft = pill.offsetLeft;
-        const pillRight = pillLeft + pill.offsetWidth;
-        if (pillLeft < containerLeft || pillRight > containerRight) {
-          pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
+        const targetScroll = pill.offsetLeft - (pillContainer.clientWidth / 2) + (pill.offsetWidth / 2);
+        pillContainer.scrollTo({ left: targetScroll, behavior: 'smooth' });
       }
     }
 
-    // Manual scroll listener (for trackpad, mouse, and touch swipe)
-    const trackElem = document.getElementById('vitals-track');
-    if (trackElem) {
-      let scrollTimeout;
-      trackElem.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          updateCarouselMetrics();
-          if (setWidth === 0 || cardWidth === 0) return;
-          const centerOffset = getCenterOffset();
-
-          // Calculate which card is closest to the middle of the carousel viewport
-          const centerScroll = trackElem.scrollLeft + centerOffset;
-          const rawIndex = Math.round(centerScroll / cardWidth);
-          const normalizedIndex = ((rawIndex % totalVitalCards) + totalVitalCards) % totalVitalCards;
-          currentVitalIndex = normalizedIndex;
-          updateActivePill(normalizedIndex);
-
-          // Boundary reset
-          if (trackElem.scrollLeft >= (setWidth * 2) - centerOffset - (cardWidth / 2)) {
-            trackElem.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
-            trackElem.scrollLeft -= setWidth;
-            setTimeout(() => {
-              trackElem.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
-            }, 40);
-          } else if (trackElem.scrollLeft < setWidth - centerOffset - (cardWidth / 2)) {
-            trackElem.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
-            trackElem.scrollLeft += setWidth;
-            setTimeout(() => {
-              trackElem.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
-            }, 40);
-          }
-        }, 90);
-      });
-    }
-
-    window.addEventListener('resize', () => {
-      updateCarouselMetrics();
-    });
-
-    if (document.readyState === 'loading') {
-      window.addEventListener('DOMContentLoaded', initInfiniteCarousel);
-    } else {
-      initInfiniteCarousel();
-    }
+    // Safety guard: guarantee the document window is strictly locked to horizontal position 0
+    window.addEventListener('scroll', () => {
+      if (window.scrollX !== 0) {
+        window.scrollTo(0, window.scrollY);
+      }
+    }, { passive: true });
 
     window.addEventListener('resize', () => {
       updateCarouselMetrics();
