@@ -99,6 +99,22 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    /* Technical Dot Grid (Notebook Blueprint Aesthetic) */
+    .tech-dot-grid {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1.25px, transparent 1.25px);
+      background-size: 26px 26px;
+      background-position: center center;
+      mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
+    }
+    .tech-dot-grid-carousel {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.20) 1.25px, transparent 1.25px);
+      background-size: 28px 28px;
+      background-position: center center;
+      mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 85%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 85%);
+    }
   </style>
 </head>
 <body class="bg-dark-base text-zinc-300 font-sans antialiased selection:bg-accent selection:text-white">
@@ -269,6 +285,9 @@
       <!-- CENTERPIECE: FLOATING BACKLIT STRAP SHOWCASE -->
       <div class="bg-dark-card border border-white/[0.08] rounded-3xl p-8 sm:p-14 relative overflow-hidden text-center">
         
+        <!-- Technical Dot Grid (Notebook Pattern Behind Product Image) -->
+        <div class="absolute inset-0 tech-dot-grid pointer-events-none z-0"></div>
+
         <!-- Ambient Radial Glow Halo (Luminous Orange Backlight) -->
         <div class="absolute w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] product-backlight blur-3xl rounded-full pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 animate-pulse opacity-95" style="animation-duration: 4s;"></div>
 
@@ -415,6 +434,9 @@
 
       <!-- Continuous Carousel Stage with Panoramic Orange Telemetry Glow -->
       <div class="relative py-4 -my-4">
+        <!-- Technical Dot Grid (Notebook Pattern Behind Carousel Cards) -->
+        <div class="absolute inset-0 tech-dot-grid-carousel pointer-events-none z-0"></div>
+
         <!-- Panoramic Continuous Glow Layer (Suitable for Continuous Carousel) -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-72 bg-gradient-to-r from-transparent via-accent/[0.18] to-transparent blur-[130px] pointer-events-none -z-0"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-4xl h-24 bg-gradient-to-r from-accent/10 via-orange-500/30 to-accent/10 blur-[65px] rounded-full pointer-events-none -z-0"></div>
