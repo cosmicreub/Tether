@@ -128,14 +128,14 @@
 
       <!-- Top Right Action Buttons -->
       <div class="flex items-center gap-3">
-        <button onclick="openInvestorModal()" class="text-xs font-semibold text-zinc-400 hover:text-white transition px-3 py-2 flex items-center gap-1.5 cursor-pointer">
+        <button onclick="goToInvestors()" class="text-xs font-semibold text-zinc-400 hover:text-white transition px-3 py-2 flex items-center gap-1.5 cursor-pointer">
           <span>Investors</span>
           <i data-lucide="file-text" class="w-3.5 h-3.5 text-zinc-500"></i>
         </button>
-        <a href="#waitlist" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-accent hover:bg-accent-hover shadow-lg shadow-accent/20 transition">
+        <button onclick="goToWaitlist()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-accent hover:bg-accent-hover shadow-lg shadow-accent/20 transition cursor-pointer">
           <span>Join Waitlist</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </a>
+        </button>
       </div>
     </div>
   </header>
@@ -169,10 +169,10 @@
 
       <!-- Primary Action Buttons -->
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#waitlist" class="w-full sm:w-auto px-8 py-3.5 bg-accent hover:bg-accent-hover text-white font-display font-bold text-sm rounded-xl shadow-lg shadow-accent/25 transition-all flex items-center justify-center gap-2">
+        <button onclick="goToWaitlist()" class="w-full sm:w-auto px-8 py-3.5 bg-accent hover:bg-accent-hover text-white font-display font-bold text-sm rounded-xl shadow-lg shadow-accent/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
           <span>Join Priority Waitlist</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
+        </button>
         <a href="#product" class="w-full sm:w-auto px-8 py-3.5 bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 border border-white/10 font-semibold text-sm rounded-xl transition flex items-center justify-center gap-2">
           <span>Explore Product</span>
           <i data-lucide="sparkles" class="w-4 h-4 text-accent"></i>
@@ -182,7 +182,7 @@
       <!-- Subtle Investor Sublink -->
       <div class="mt-5 flex items-center justify-center gap-1.5 text-xs text-zinc-500">
         <span>Accredited investor or healthcare partner?</span>
-        <button onclick="openInvestorModal()" class="text-zinc-300 hover:text-accent font-medium underline underline-offset-2 transition cursor-pointer">
+        <button onclick="goToInvestors()" class="text-zinc-300 hover:text-accent font-medium underline underline-offset-2 transition cursor-pointer">
           Request Pitch Deck &rarr;
         </button>
       </div>
@@ -924,242 +924,80 @@
 
             <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-dark-card border border-white/[0.05]">
               <div class="w-8 h-8 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-white">Tailored Dual Interfaces</h4>
+                <p class="text-xs text-zinc-400 mt-0.5">A simplified high-contrast view for elders paired with clinical-depth telemetry and Fall Radar monitoring for remote family.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-dark-card border border-white/[0.05]">
+              <div class="w-8 h-8 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5">
                 <i data-lucide="users" class="w-4 h-4"></i>
               </div>
               <div>
                 <h4 class="text-sm font-semibold text-white">Multi-Parent Switcher for Family</h4>
-                <p class="text-xs text-zinc-400 mt-0.5">Adult children can monitor Mom and Dad simultaneously with Outlook-style profile toggling.</p>
+                <p class="text-xs text-zinc-400 mt-0.5">Adult children can monitor Mom and Dad simultaneously with seamless profile toggling.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Interactive App Mockup -->
-        <div class="lg:col-span-7 flex justify-center lg:justify-end">
+        <!-- Right Column: Dual iPhone Side by Side (Apple-style Presentation) -->
+        <div class="lg:col-span-7 flex justify-center items-center relative py-8 overflow-visible">
           
-          <!-- Outer Phone Frame -->
-          <div class="w-full max-w-[340px] sm:max-w-[360px] bg-[#000000] p-3 sm:p-3.5 rounded-[48px] shadow-[0_25px_70px_rgba(0,0,0,0.95)] border border-white/10 relative">
-            
-            <!-- Screen Chassis -->
-            <div class="w-full bg-[#0a0b10] rounded-[40px] overflow-hidden relative border border-white/[0.06] text-white">
-              
-              <!-- Subo Top Glow Wash -->
-              <div class="absolute top-0 right-0 left-0 h-72 subo-header-glow pointer-events-none"></div>
+          <!-- Ambient Orange Glow Behind Phones -->
+          <div class="absolute w-[460px] h-[460px] bg-accent/15 blur-[140px] rounded-full pointer-events-none -top-10 right-1/2 translate-x-1/2"></div>
+          
+          <div class="relative w-full flex flex-col sm:flex-row items-center sm:items-end justify-center gap-6 md:gap-8">
 
-              <!-- Status Bar + Dynamic Island -->
-              <div class="px-7 pt-3.5 pb-2 flex items-center justify-between text-xs text-zinc-200 relative z-20">
-                <span class="font-semibold text-xs tracking-tight">9:41</span>
-                
-                <!-- Dynamic Island Pill -->
-                <div class="w-24 h-5 bg-black rounded-full mx-auto -mt-1 shadow-inner flex items-center justify-center">
-                  <div class="w-2.5 h-2.5 rounded-full bg-zinc-900 border border-zinc-800 ml-auto mr-2"></div>
-                </div>
-
-                <div class="flex items-center gap-1.5 text-[11px]">
-                  <i data-lucide="signal" class="w-3 h-3"></i>
-                  <i data-lucide="wifi" class="w-3 h-3"></i>
-                  <div class="w-5 h-2.5 border border-zinc-400 rounded-sm p-0.5 flex items-center">
-                    <div class="w-full h-full bg-white rounded-2xs"></div>
-                  </div>
-                </div>
+            <!-- PHONE 1: SENIOR VIEW (COMPACT COMPANION) -->
+            <div class="flex flex-col items-center group transition-transform duration-300 ease-out hover:-translate-y-2">
+              <!-- Label Pill -->
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/85 border border-white/15 backdrop-blur-md text-[11px] font-semibold text-zinc-300 shadow-xl mb-3">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Senior View</span>
+                <span class="text-zinc-500">•</span>
+                <span class="text-zinc-400 text-[10px]">Zero Clutter</span>
               </div>
 
-              <!-- Phone Content Area -->
-              <div class="p-5 pt-3 pb-24 relative z-10 min-h-[550px]">
-                
-                <!-- VIEW 1: OVERVIEW -->
-                <div id="view-overview" class="space-y-4 fade-in" style="display: block;">
-                  <!-- App Header -->
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-accent">Active Guardian</span>
-                      <h3 class="text-2xl font-display font-extrabold text-white tracking-tight">Status</h3>
-                    </div>
-                    <!-- Profile Switcher Pill -->
-                    <div class="flex items-center gap-1.5">
-                      <div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/40 border border-white/15 backdrop-blur-md cursor-pointer hover:bg-black/60 transition" onclick="switchView('profiles')">
-                        <span class="text-[10px] font-bold text-accent">1/2</span>
-                        <i data-lucide="users" class="w-3.5 h-3.5 text-zinc-200"></i>
-                      </div>
-                      <button class="w-7 h-7 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent">
-                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Hero Highlight Card -->
-                  <div class="flex items-center justify-between pt-1">
-                    <div>
-                      <h4 class="text-lg font-display font-bold text-white tracking-tight">Dorothy (Mom)</h4>
-                      <p class="text-xs text-zinc-400 mt-0.5">Living Room • Bluetooth Linked</p>
-                    </div>
-                    <!-- Avatar Circle with Tether Glow Ring -->
-                    <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-accent to-orange-400 p-0.5 shadow-lg shadow-accent/20 flex items-center justify-center">
-                      <div class="w-full h-full rounded-full bg-[#0a0b10] flex items-center justify-center relative overflow-hidden">
-                        <i data-lucide="shield-check" class="w-7 h-7 text-accent"></i>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Alert Pill Banner -->
-                  <div class="bg-black/50 border border-white/[0.08] rounded-2xl p-3 flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                      <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                      <div>
-                        <span class="text-[9px] uppercase font-bold text-zinc-500 block leading-tight">Fall Radar</span>
-                        <p class="text-xs font-semibold text-white">No drops detected today</p>
-                      </div>
-                    </div>
-                    <span class="text-[11px] font-bold text-accent flex items-center gap-0.5">
-                      Armed <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                    </span>
-                  </div>
-
-                  <!-- Telemetry Section: 2x2 Rectangular Grid View -->
-                  <div>
-                    <div class="flex items-center justify-between mb-2 px-1">
-                      <span class="text-[11px] font-bold text-zinc-400 tracking-wider uppercase">Live Telemetry</span>
-                      <span class="text-[10px] text-zinc-500 font-medium">Updated 2m ago</span>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-2.5">
-                      <div class="bg-black/60 border border-white/[0.07] p-3 rounded-2xl flex flex-col justify-between hover:border-accent/30 transition">
-                        <div class="flex items-center justify-between mb-2">
-                          <span class="text-[10px] font-semibold text-zinc-400">Blood Pressure</span>
-                          <div class="w-6 h-6 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center text-accent">
-                            <i data-lucide="activity" class="w-3 h-3"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="flex items-baseline gap-1">
-                            <span class="text-base font-extrabold text-white font-display">118/76</span>
-                            <span class="text-[9px] text-zinc-500 font-medium">mmHg</span>
-                          </div>
-                          <span class="text-[10px] text-emerald-400 font-medium mt-0.5 block">Optimal</span>
-                        </div>
-                      </div>
-
-                      <div class="bg-black/60 border border-white/[0.07] p-3 rounded-2xl flex flex-col justify-between hover:border-rose-500/30 transition">
-                        <div class="flex items-center justify-between mb-2">
-                          <span class="text-[10px] font-semibold text-zinc-400">Resting HR</span>
-                          <div class="w-6 h-6 rounded-lg bg-rose-500/15 border border-rose-500/25 flex items-center justify-center text-rose-500">
-                            <i data-lucide="heart" class="w-3 h-3"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="flex items-baseline gap-1">
-                            <span class="text-base font-extrabold text-white font-display">72</span>
-                            <span class="text-[9px] text-zinc-500 font-medium">BPM</span>
-                          </div>
-                          <span class="text-[10px] text-emerald-400 font-medium mt-0.5 block">Steady Baseline</span>
-                        </div>
-                      </div>
-
-                      <div class="bg-black/60 border border-white/[0.07] p-3 rounded-2xl flex flex-col justify-between hover:border-cyan-500/30 transition">
-                        <div class="flex items-center justify-between mb-2">
-                          <span class="text-[10px] font-semibold text-zinc-400">Blood Oxygen</span>
-                          <div class="w-6 h-6 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center text-cyan-400">
-                            <i data-lucide="droplet" class="w-3 h-3"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="flex items-baseline gap-1">
-                            <span class="text-base font-extrabold text-white font-display">98%</span>
-                            <span class="text-[9px] text-zinc-500 font-medium">SpO₂</span>
-                          </div>
-                          <span class="text-[10px] text-emerald-400 font-medium mt-0.5 block">Normal Oxygen</span>
-                        </div>
-                      </div>
-
-                      <div class="bg-black/60 border border-white/[0.07] p-3 rounded-2xl flex flex-col justify-between hover:border-amber-500/30 transition">
-                        <div class="flex items-center justify-between mb-2">
-                          <span class="text-[10px] font-semibold text-zinc-400">Skin Temp</span>
-                          <div class="w-6 h-6 rounded-lg bg-amber-500/15 border border-amber-500/25 flex items-center justify-center text-amber-400">
-                            <i data-lucide="thermometer" class="w-3 h-3"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="flex items-baseline gap-1">
-                            <span class="text-base font-extrabold text-white font-display">98.4°</span>
-                            <span class="text-[9px] text-zinc-500 font-medium">F</span>
-                          </div>
-                          <span class="text-[10px] text-zinc-400 font-medium mt-0.5 block">No Fever Spike</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- VIEW 2: PROFILES (Initially Hidden) -->
-                <div id="view-profiles" class="space-y-5 fade-in" style="display: none;">
-                  
-                  <div class="flex items-center justify-between mb-2">
-                    <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-accent">Tether Network</span>
-                      <h3 class="text-2xl font-display font-extrabold text-white tracking-tight">Profiles</h3>
-                    </div>
-                    <button class="w-7 h-7 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent">
-                      <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
-                    </button>
-                  </div>
-
-                  <div class="space-y-3">
-                    <!-- Profile Card 1 -->
-                    <div class="bg-black/60 border border-accent/30 p-3.5 rounded-2xl flex items-center justify-between cursor-pointer hover:bg-black/80 transition shadow-lg shadow-accent/5" onclick="switchView('overview')">
-                       <div class="flex items-center gap-3.5">
-                          <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-accent to-orange-400 p-0.5 shadow-md shadow-accent/20 flex items-center justify-center">
-                            <div class="w-full h-full rounded-full bg-[#0a0b10] flex items-center justify-center">
-                              <i data-lucide="shield-check" class="w-5 h-5 text-accent"></i>
-                            </div>
-                          </div>
-                          <div>
-                             <h4 class="text-base font-display font-bold text-white tracking-tight">Dorothy (Mom)</h4>
-                             <span class="text-[10px] text-emerald-400 font-semibold block mt-0.5 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> Safe • 85% Battery</span>
-                          </div>
-                       </div>
-                       <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
-                    </div>
-
-                    <!-- Profile Card 2 -->
-                    <div class="bg-black/40 border border-white/[0.07] p-3.5 rounded-2xl flex items-center justify-between cursor-pointer hover:bg-black/60 transition">
-                       <div class="flex items-center gap-3.5">
-                          <div class="w-12 h-12 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center">
-                            <i data-lucide="user" class="w-5 h-5 text-zinc-400"></i>
-                          </div>
-                          <div>
-                             <h4 class="text-base font-display font-bold text-white tracking-tight">Arthur (Dad)</h4>
-                             <span class="text-[10px] text-emerald-400 font-semibold block mt-0.5 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Safe • 62% Battery</span>
-                          </div>
-                       </div>
-                       <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
-                    </div>
-                  </div>
-
-                  <div class="mt-4 p-4 border border-dashed border-white/10 rounded-2xl flex items-center justify-center text-center cursor-pointer hover:bg-white/5 transition">
-                    <div>
-                      <i data-lucide="link" class="w-5 h-5 text-zinc-500 mx-auto mb-1"></i>
-                      <span class="text-xs font-semibold text-zinc-400">Pair New Device</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Floating Dual Pill Tab Bar -->
-              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30">
-                <div class="flex items-center gap-1 p-1 bg-zinc-900/95 border border-white/15 rounded-full backdrop-blur-xl shadow-2xl">
-                  <button id="tab-overview" onclick="switchView('overview')" class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-800 text-white text-xs font-semibold shadow-inner transition-all duration-300">
-                    <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-accent svg-icon"></i>
-                    <span>Overview</span>
-                  </button>
-                  <button id="tab-profiles" onclick="switchView('profiles')" class="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300">
-                    <i data-lucide="users" class="w-3.5 h-3.5 svg-icon"></i>
-                    <span>Profiles</span>
-                  </button>
+              <!-- Hardware Shell -->
+              <div class="w-[210px] sm:w-[230px] md:w-[250px] rounded-[44px] sm:rounded-[46px] p-[8px] bg-gradient-to-b from-[#3a3a3c] via-[#1c1c1e] to-[#0c0c0e] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.12)] group-hover:shadow-[0_25px_60px_-10px_rgba(0,0,0,0.95)] transition-shadow duration-300 relative">
+                <!-- Inner Screen Chassis -->
+                <div class="rounded-[38px] overflow-hidden bg-black relative aspect-[9/19.5]">
+                  <img src="assets/app-senior-view.jpg" alt="Tether Senior View Interface" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none"></div>
                 </div>
               </div>
-
             </div>
+
+            <!-- PHONE 2: GUARDIAN VIEW (HERO TELEMETRY PHONE) -->
+            <div class="flex flex-col items-center group transition-transform duration-300 ease-out hover:-translate-y-2">
+              <!-- Label Pill -->
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/90 border border-accent/40 backdrop-blur-md text-[11px] font-semibold text-accent shadow-2xl mb-3">
+                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <span>Guardian View</span>
+                <span class="text-zinc-500">•</span>
+                <span class="text-zinc-200 text-[10px]">Family Telemetry</span>
+              </div>
+
+              <!-- Hardware Shell -->
+              <div class="w-[255px] sm:w-[280px] md:w-[305px] rounded-[50px] sm:rounded-[52px] p-[10px] bg-gradient-to-b from-[#48484a] via-[#242426] to-[#121214] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.95),0_0_35px_rgba(255,90,31,0.2),0_0_0_1px_rgba(255,255,255,0.18)] group-hover:shadow-[0_35px_95px_-15px_rgba(0,0,0,0.98),0_0_45px_rgba(255,90,31,0.28)] transition-shadow duration-300 relative">
+                <!-- Side Buttons simulation -->
+                <div class="absolute -left-[2px] top-24 w-[2px] h-9 bg-zinc-600 rounded-l-sm"></div>
+                <div class="absolute -left-[2px] top-36 w-[2px] h-12 bg-zinc-600 rounded-l-sm"></div>
+                <div class="absolute -right-[2px] top-28 w-[2px] h-14 bg-zinc-600 rounded-r-sm"></div>
+
+                <!-- Inner Screen Chassis -->
+                <div class="rounded-[42px] overflow-hidden bg-black relative aspect-[9/19.5] border border-white/[0.08]">
+                  <img src="assets/app-guardian-view.jpg" alt="Tether Guardian View Interface" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.05] to-white/[0.02] pointer-events-none"></div>
+                  <div class="absolute inset-0 ring-1 ring-inset ring-black/40 pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -1214,10 +1052,10 @@
           </div>
           
           <div class="mt-8 pt-6 border-t border-white/[0.08]">
-            <a href="#waitlist" onclick="switchWaitlistTab('waitlist')" class="w-full py-3 px-4 rounded-xl bg-accent hover:bg-accent-hover text-white text-xs font-bold font-display transition flex items-center justify-center gap-2 shadow-lg shadow-accent/20">
+            <button onclick="goToWaitlist('Family Caregiver (Tether Guardian)')" class="w-full py-3 px-4 rounded-xl bg-accent hover:bg-accent-hover text-white text-xs font-bold font-display transition flex items-center justify-center gap-2 shadow-lg shadow-accent/20 cursor-pointer">
               <span>Join Guardian Waitlist</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -1250,10 +1088,10 @@
           </div>
 
           <div class="mt-8 pt-6 border-t border-white/[0.08]">
-            <a href="#waitlist" onclick="switchWaitlistTab('waitlist')" class="w-full py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-white/10 text-white text-xs font-bold font-display transition flex items-center justify-center gap-2">
+            <button onclick="goToWaitlist('Senior Living Facility (Tether Enterprise)')" class="w-full py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-white/10 text-white text-xs font-bold font-display transition flex items-center justify-center gap-2 cursor-pointer">
               <span>Inquire for Enterprise Pilot</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-accent"></i>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -1527,7 +1365,7 @@
         <span>— BE TETHERED TO YOUR LOVED ONES</span>
       </div>
       <div class="flex items-center gap-4">
-        <button onclick="openInvestorModal()" class="hover:text-zinc-300 transition cursor-pointer">Investor Relations</button>
+        <button onclick="goToInvestors()" class="hover:text-zinc-300 transition cursor-pointer">Investor Relations</button>
         <span>•</span>
         <span>Tether Health Inc. © 2026</span>
       </div>
@@ -1565,13 +1403,43 @@
       }
     }
 
-    function openInvestorModal() {
-      switchWaitlistTab('investors');
+    function scrollDirectlyToWaitlistSection() {
       const waitlistSection = document.getElementById('waitlist');
       if (waitlistSection) {
-        waitlistSection.scrollIntoView({ behavior: 'smooth' });
+        const navOffset = 85;
+        const targetPos = waitlistSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
       }
     }
+
+    function goToWaitlist(role = null) {
+      switchWaitlistTab('waitlist');
+      if (role) {
+        const roleSelect = document.getElementById('waitlist-role');
+        if (roleSelect) roleSelect.value = role;
+      }
+      scrollDirectlyToWaitlistSection();
+    }
+
+    function goToInvestors() {
+      switchWaitlistTab('investors');
+      scrollDirectlyToWaitlistSection();
+    }
+
+    function openInvestorModal() {
+      goToInvestors();
+    }
+
+    // Hash listener for direct anchor linking
+    function handleWaitlistHash() {
+      if (window.location.hash === '#investors') {
+        goToInvestors();
+      } else if (window.location.hash === '#waitlist') {
+        goToWaitlist();
+      }
+    }
+    window.addEventListener('load', handleWaitlistHash);
+    window.addEventListener('hashchange', handleWaitlistHash);
 
     // ================= 7 VITALS CONTINUOUS INFINITE CAROUSEL CONTROLLER =================
     let currentVitalIndex = 0;
@@ -1818,37 +1686,7 @@
       initInfiniteCarousel();
     }
 
-    // Tab Switcher Logic for Companion App Mockup
-    function switchView(view) {
-      const overview = document.getElementById('view-overview');
-      const profiles = document.getElementById('view-profiles');
-      const tabOverview = document.getElementById('tab-overview');
-      const tabProfiles = document.getElementById('tab-profiles');
 
-      const iconOverview = tabOverview.querySelector('.svg-icon');
-      const iconProfiles = tabProfiles.querySelector('.svg-icon');
-
-      if (view === 'overview') {
-        overview.style.display = 'block';
-        profiles.style.display = 'none';
-
-        tabOverview.className = 'flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-800 text-white text-xs font-semibold shadow-inner transition-all duration-300';
-        if (iconOverview) iconOverview.classList.add('text-accent');
-        
-        tabProfiles.className = 'flex items-center gap-1.5 px-4 py-1.5 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300';
-        if (iconProfiles) iconProfiles.classList.remove('text-accent');
-
-      } else if (view === 'profiles') {
-        overview.style.display = 'none';
-        profiles.style.display = 'block';
-
-        tabProfiles.className = 'flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-800 text-white text-xs font-semibold shadow-inner transition-all duration-300';
-        if (iconProfiles) iconProfiles.classList.add('text-accent');
-        
-        tabOverview.className = 'flex items-center gap-1.5 px-4 py-1.5 rounded-full text-zinc-400 hover:text-white text-xs font-medium transition-all duration-300';
-        if (iconOverview) iconOverview.classList.remove('text-accent');
-      }
-    }
 
     // ================= GOOGLE SHEETS DUAL-TAB FORM SUBMISSION HANDLERS =================
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz9cSlztl-WnogEUd2VPxpAB4gqAr_ItdD_FeKTBG_DaI8w10KYgfiKYgrXAHRK7jt3/exec';
