@@ -344,25 +344,25 @@
             </button>
 
             <!-- 3. Find My & Relay (Middle Left) -->
-            <button onclick="jumpToVitalCard(2)" class="absolute top-[38%] -left-7 sm:-left-24 md:-left-28 lg:-left-32 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-white/10 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap cursor-pointer">
-              <i data-lucide="map-pin" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-accent"></i>
+            <button onclick="jumpToVitalCard(2)" class="absolute top-[38%] -left-7 sm:-left-24 md:-left-28 lg:-left-32 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-sky-500/50 text-[9px] sm:text-[11px] font-semibold text-sky-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-sky-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
+              <i data-lucide="map-pin" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-sky-400"></i>
               <span>3. Find My</span>
             </button>
 
             <!-- 4. Tactile SOS Button (Middle Right) -->
-            <button onclick="jumpToVitalCard(3)" class="absolute top-[38%] -right-7 sm:-right-24 md:-right-28 lg:-right-32 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-white/10 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-accent hover:scale-105 transition group whitespace-nowrap cursor-pointer">
-              <i data-lucide="fingerprint" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-accent"></i>
+            <button onclick="jumpToVitalCard(3)" class="absolute top-[38%] -right-7 sm:-right-24 md:-right-28 lg:-right-32 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-purple-500/50 text-[9px] sm:text-[11px] font-semibold text-purple-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-purple-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
+              <i data-lucide="fingerprint" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-purple-400"></i>
               <span>4. SOS Button</span>
             </button>
 
             <!-- 5. Skin Temp (Bottom Left) -->
-            <button onclick="jumpToVitalCard(4)" class="absolute bottom-1 sm:bottom-4 -left-5 sm:-left-20 md:-left-24 lg:-left-28 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-amber-400/40 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-amber-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
+            <button onclick="jumpToVitalCard(4)" class="absolute bottom-1 sm:bottom-4 -left-5 sm:-left-20 md:-left-24 lg:-left-28 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-amber-400/50 text-[9px] sm:text-[11px] font-semibold text-amber-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-amber-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="thermometer" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-400"></i>
               <span>5. Skin Temp</span>
             </button>
 
             <!-- 6. Blood Pressure (Bottom Right) -->
-            <button onclick="jumpToVitalCard(5)" class="absolute bottom-1 sm:bottom-4 -right-5 sm:-right-20 md:-right-24 lg:-right-28 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-cyan-400/40 text-[9px] sm:text-[11px] font-semibold text-zinc-200 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-cyan-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
+            <button onclick="jumpToVitalCard(5)" class="absolute bottom-1 sm:bottom-4 -right-5 sm:-right-20 md:-right-24 lg:-right-28 z-20 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-cyan-400/50 text-[9px] sm:text-[11px] font-semibold text-cyan-400 shadow-xl flex items-center gap-1 sm:gap-1.5 hover:border-cyan-400 hover:scale-105 transition group whitespace-nowrap cursor-pointer">
               <i data-lucide="activity" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-cyan-400"></i>
               <span>6. BP Range</span>
             </button>
@@ -437,26 +437,33 @@
 
       <!-- Quick Selection Tabs -->
       <div class="vital-pill-container flex items-center gap-2 overflow-x-auto pb-3 sm:pb-4 mb-4 sm:mb-6 scrollbar-none">
-        <button onclick="jumpToVitalCard(0)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-accent text-white shadow-inner transition whitespace-nowrap">
-          1. Fall Detection
+        <button onclick="jumpToVitalCard(0)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/25 border border-accent transition whitespace-nowrap cursor-pointer flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_#ffffff] vital-dot"></span>
+          <span>1. Fall Detection</span>
         </button>
-        <button onclick="jumpToVitalCard(1)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap">
-          2. NFC Passport
+        <button onclick="jumpToVitalCard(1)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-emerald-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34D399] vital-dot"></span>
+          <span>2. NFC Passport</span>
         </button>
-        <button onclick="jumpToVitalCard(2)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap">
-          3. Find My
+        <button onclick="jumpToVitalCard(2)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-sky-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_6px_#38BDF8] vital-dot"></span>
+          <span>3. Find My</span>
         </button>
-        <button onclick="jumpToVitalCard(3)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap">
-          4. SOS Button
+        <button onclick="jumpToVitalCard(3)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-purple-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_6px_#C084FC] vital-dot"></span>
+          <span>4. SOS Button</span>
         </button>
-        <button onclick="jumpToVitalCard(4)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap">
-          5. Skin Temp
+        <button onclick="jumpToVitalCard(4)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-amber-400/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_#FBBF24] vital-dot"></span>
+          <span>5. Skin Temp</span>
         </button>
-        <button onclick="jumpToVitalCard(5)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap">
-          6. Blood Pressure
+        <button onclick="jumpToVitalCard(5)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-cyan-400/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_#22D3EE] vital-dot"></span>
+          <span>6. Blood Pressure</span>
         </button>
-        <button onclick="jumpToVitalCard(6)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap">
-          7. HR & HRV
+        <button onclick="jumpToVitalCard(6)" class="vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-rose-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_6px_#F43F5E] vital-dot"></span>
+          <span>7. HR & HRV</span>
         </button>
       </div>
 
@@ -578,21 +585,21 @@
         </div>
 
         <!-- CARD 3: FIND MY -->
-        <div id="vital-card-2" class="vital-card flex-shrink-0 w-[275px] sm:w-[340px] md:w-[365px] h-auto snap-center bg-dark-card orange-card-border p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-2" class="vital-card flex-shrink-0 w-[275px] sm:w-[340px] md:w-[365px] h-auto snap-center bg-dark-card orange-card-border p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative group hover:border-sky-400/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-[10px] uppercase font-extrabold tracking-wider text-accent px-2.5 py-1 rounded bg-accent/10 border border-accent/20">
+              <span class="text-[10px] uppercase font-extrabold tracking-wider text-sky-400 px-2.5 py-1 rounded bg-sky-500/10 border border-sky-500/20">
                 LAYER 03 • LOCATION & MOBILITY
               </span>
-              <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+              <div class="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
                 <i data-lucide="map-pin" class="w-4 h-4"></i>
               </div>
             </div>
             <h3 class="text-lg sm:text-xl font-display font-extrabold text-white mt-2.5">Find My & Cellular / BLE Relay</h3>
             
             <!-- Why We Built It -->
-            <div class="mt-3 p-3 rounded-xl bg-accent/10 border border-accent/25">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
+            <div class="mt-3 p-3 rounded-xl bg-sky-500/10 border border-sky-500/25">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5">
                 <i data-lucide="target" class="w-3.5 h-3.5"></i> Why We Built It
               </span>
               <p class="text-[11px] text-zinc-300 mt-1 leading-relaxed">
@@ -611,9 +618,9 @@
               <span class="text-zinc-500 text-[10px]">Updated 45s ago</span>
             </div>
             <div class="h-20 bg-zinc-950 rounded-xl border border-white/5 relative overflow-hidden flex items-center justify-center">
-              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#FF5A1F_1px,transparent_1px)] [background-size:12px_12px]"></div>
-              <div class="w-12 h-12 rounded-full border border-accent/40 bg-accent/10 flex items-center justify-center relative">
-                <div class="w-2.5 h-2.5 rounded-full bg-accent animate-pulse"></div>
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:12px_12px]"></div>
+              <div class="w-12 h-12 rounded-full border border-sky-500/40 bg-sky-500/10 flex items-center justify-center relative">
+                <div class="w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse"></div>
                 <span class="absolute -bottom-3.5 text-[9px] font-bold text-zinc-300 whitespace-nowrap">Home Perimeter (Safe)</span>
               </div>
             </div>
@@ -621,21 +628,21 @@
         </div>
 
         <!-- CARD 4: SOS BUTTON -->
-        <div id="vital-card-3" class="vital-card flex-shrink-0 w-[275px] sm:w-[340px] md:w-[365px] h-auto snap-center bg-dark-card orange-card-border p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-3" class="vital-card flex-shrink-0 w-[275px] sm:w-[340px] md:w-[365px] h-auto snap-center bg-dark-card orange-card-border p-4 sm:p-5 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative group hover:border-purple-400/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-[10px] uppercase font-extrabold tracking-wider text-accent px-2.5 py-1 rounded bg-accent/10 border border-accent/20">
+              <span class="text-[10px] uppercase font-extrabold tracking-wider text-purple-400 px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/20">
                 LAYER 04 • TACTILE PANIC RESPONSE
               </span>
-              <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
                 <i data-lucide="fingerprint" class="w-4 h-4"></i>
               </div>
             </div>
             <h3 class="text-lg sm:text-xl font-display font-extrabold text-white mt-2.5">Knurled Tactile SOS Button</h3>
             
             <!-- Why We Built It -->
-            <div class="mt-3 p-3 rounded-xl bg-accent/10 border border-accent/25">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
+            <div class="mt-3 p-3 rounded-xl bg-purple-500/10 border border-purple-500/25">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
                 <i data-lucide="target" class="w-3.5 h-3.5"></i> Why We Built It
               </span>
               <p class="text-[11px] text-zinc-300 mt-1 leading-relaxed">
@@ -647,16 +654,16 @@
           <!-- Micro-App UI Snapshot (From index_v6_backup) -->
           <div class="mt-auto p-3.5 rounded-2xl bg-black/80 border border-white/[0.08] space-y-2">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-accent flex items-center gap-1.5">
-                <i data-lucide="phone-call" class="w-3.5 h-3.5 text-accent"></i>
+              <span class="font-bold text-purple-400 flex items-center gap-1.5">
+                <i data-lucide="phone-call" class="w-3.5 h-3.5 text-purple-400"></i>
                 TACTILE SOS BROADCAST
               </span>
               <span class="text-zinc-500 text-[10px]">Confirmed via Haptics</span>
             </div>
-            <div class="bg-accent/10 border border-accent/25 p-2.5 rounded-xl text-xs">
+            <div class="bg-purple-500/10 border border-purple-500/25 p-2.5 rounded-xl text-xs">
               <div class="font-bold text-white flex justify-between">
                 <span>Emergency Circle Alerted</span>
-                <span class="text-accent">3 Contacts</span>
+                <span class="text-purple-400">3 Contacts</span>
               </div>
               <p class="text-[11px] text-zinc-300 mt-1">Simultaneous 911 dispatch + high-priority call relay to family.</p>
             </div>
@@ -1715,13 +1722,62 @@
       }
     }
 
+    const pillThemes = [
+      {
+        active: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/25 border border-accent transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        idle: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-accent/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        activeDot: 'w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]',
+        idleDot: 'w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_6px_#FF5A1F]'
+      },
+      {
+        active: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-emerald-500 text-white shadow-lg shadow-emerald-500/25 border border-emerald-400 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        idle: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-emerald-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        activeDot: 'w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]',
+        idleDot: 'w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34D399]'
+      },
+      {
+        active: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-sky-500 text-white shadow-lg shadow-sky-500/25 border border-sky-400 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        idle: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-sky-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        activeDot: 'w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]',
+        idleDot: 'w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_6px_#38BDF8]'
+      },
+      {
+        active: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-purple-500 text-white shadow-lg shadow-purple-500/25 border border-purple-400 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        idle: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-purple-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        activeDot: 'w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]',
+        idleDot: 'w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_6px_#C084FC]'
+      },
+      {
+        active: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-amber-500 text-zinc-950 shadow-lg shadow-amber-500/25 border border-amber-300 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        idle: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-amber-400/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        activeDot: 'w-1.5 h-1.5 rounded-full bg-zinc-950',
+        idleDot: 'w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_#FBBF24]'
+      },
+      {
+        active: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-cyan-500 text-zinc-950 shadow-lg shadow-cyan-500/25 border border-cyan-300 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        idle: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-cyan-400/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        activeDot: 'w-1.5 h-1.5 rounded-full bg-zinc-950',
+        idleDot: 'w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_#22D3EE]'
+      },
+      {
+        active: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-rose-500 text-white shadow-lg shadow-rose-500/25 border border-rose-400 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        idle: 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900/90 text-zinc-300 hover:text-white hover:border-rose-500/40 border border-white/10 transition whitespace-nowrap cursor-pointer flex items-center gap-1.5',
+        activeDot: 'w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]',
+        idleDot: 'w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_6px_#F43F5E]'
+      }
+    ];
+
     function updateActivePill(index) {
       const pills = document.querySelectorAll('.vital-jump-btn');
       pills.forEach((pill, i) => {
+        const theme = pillThemes[i] || pillThemes[0];
+        const dot = pill.querySelector('.vital-dot');
         if (i === index) {
-          pill.className = 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold bg-accent text-white shadow-inner transition whitespace-nowrap cursor-pointer';
+          pill.className = theme.active;
+          if (dot) dot.className = theme.activeDot + ' vital-dot';
         } else {
-          pill.className = 'vital-jump-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap cursor-pointer';
+          pill.className = theme.idle;
+          if (dot) dot.className = theme.idleDot + ' vital-dot';
         }
       });
 
