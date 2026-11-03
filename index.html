@@ -259,7 +259,7 @@
     <section id="product" class="max-w-6xl mx-auto px-6 py-24 border-t border-white/[0.06]">
       <div class="text-center max-w-3xl mx-auto mb-14">
         <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
-          Tether: Engineered for Invisible Protection
+          Tether: Designed for Invisible Protection
         </h2>
         <p class="text-zinc-400 text-sm sm:text-base mt-4 leading-relaxed">
           No screens. No confusing notifications. No daily charging chores. Continuous medical-grade biometric engineering discreetly concealed under soft, skin-friendly fabric that seniors actually want to wear.
@@ -413,14 +413,25 @@
         </button>
       </div>
 
-      <!-- ================= 3:4 RECTANGLE CAROUSEL TRACK (ALL CARDS ON SCREEN) ================= -->
-      <div 
-        id="vitals-track" 
-        class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 px-1 scrollbar-none"
-      >
+      <!-- Continuous Carousel Stage with Panoramic Orange Telemetry Glow -->
+      <div class="relative py-4 -my-4">
+        <!-- Panoramic Continuous Glow Layer (Suitable for Continuous Carousel) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-72 bg-gradient-to-r from-transparent via-accent/[0.18] to-transparent blur-[130px] pointer-events-none -z-0"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-4xl h-24 bg-gradient-to-r from-accent/10 via-orange-500/30 to-accent/10 blur-[65px] rounded-full pointer-events-none -z-0"></div>
+        <div class="absolute bottom-6 left-1/4 right-1/4 h-14 bg-accent/[0.20] blur-[45px] rounded-full pointer-events-none -z-0"></div>
+
+        <!-- Vignette Edge Fades for Seamless Continuous Stream -->
+        <div class="pointer-events-none absolute top-0 bottom-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-dark-base via-dark-base/80 to-transparent z-20"></div>
+        <div class="pointer-events-none absolute top-0 bottom-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-dark-base via-dark-base/80 to-transparent z-20"></div>
+
+        <!-- ================= 3:4 RECTANGLE CAROUSEL TRACK (ALL CARDS ON SCREEN) ================= -->
+        <div 
+          id="vitals-track" 
+          class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 px-2 scrollbar-none relative z-10"
+        >
         
         <!-- CARD 1: FALL DETECTION (3:4 Aspect Ratio) -->
-        <div id="vital-card-0" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-start bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-0" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-center bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-extrabold tracking-wider text-accent px-2.5 py-1 rounded bg-accent/10 border border-accent/20">
@@ -469,7 +480,7 @@
         </div>
 
         <!-- CARD 2: NFC PASSPORT (3:4 Aspect Ratio) -->
-        <div id="vital-card-1" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-start bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-emerald-500/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-1" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-center bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-emerald-500/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-extrabold tracking-wider text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">
@@ -517,7 +528,7 @@
         </div>
 
         <!-- CARD 3: FIND MY (3:4 Aspect Ratio) -->
-        <div id="vital-card-2" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-start bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-2" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-center bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-extrabold tracking-wider text-accent px-2.5 py-1 rounded bg-accent/10 border border-accent/20">
@@ -560,7 +571,7 @@
         </div>
 
         <!-- CARD 4: SOS BUTTON (3:4 Aspect Ratio) -->
-        <div id="vital-card-3" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-start bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-3" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-center bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-accent/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-extrabold tracking-wider text-accent px-2.5 py-1 rounded bg-accent/10 border border-accent/20">
@@ -603,7 +614,7 @@
         </div>
 
         <!-- CARD 5: SKIN TEMPERATURE (3:4 Aspect Ratio) -->
-        <div id="vital-card-4" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-start bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-amber-400/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-4" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-center bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-amber-400/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-extrabold tracking-wider text-amber-400 px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">
@@ -644,7 +655,7 @@
         </div>
 
         <!-- CARD 6: OPTICAL BLOOD PRESSURE (3:4 Aspect Ratio) -->
-        <div id="vital-card-5" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-start bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-cyan-400/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-5" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-center bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-cyan-400/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-extrabold tracking-wider text-cyan-400 px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/20">
@@ -687,7 +698,7 @@
         </div>
 
         <!-- CARD 7: CONTINUOUS HR & HRV (3:4 Aspect Ratio) -->
-        <div id="vital-card-6" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-start bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-rose-500/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
+        <div id="vital-card-6" class="vital-card flex-shrink-0 w-[310px] sm:w-[340px] md:w-[365px] aspect-[3/4] snap-center bg-dark-card orange-card-border p-5 rounded-3xl flex flex-col justify-between relative group hover:border-rose-500/40 transition print:w-full print:aspect-auto print:h-auto print:break-inside-avoid">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-extrabold tracking-wider text-rose-400 px-2.5 py-1 rounded bg-rose-500/10 border border-rose-500/20">
@@ -741,6 +752,7 @@
         </div>
 
       </div>
+    </div>
 
     </section>
 
@@ -1561,36 +1573,164 @@
       }
     }
 
-    // ================= 7 VITALS 4:3 MULTI-CARD CAROUSEL CONTROLLER =================
+    // ================= 7 VITALS CONTINUOUS INFINITE CAROUSEL CONTROLLER =================
     let currentVitalIndex = 0;
     const totalVitalCards = 7;
+    let cardWidth = 0;
+    let setWidth = 0;
+    let isCarouselInitialized = false;
 
-    function getCardWidth() {
+    function getCenterOffset() {
       const track = document.getElementById('vitals-track');
-      if (!track) return 400;
+      if (!track) return 0;
       const card = track.querySelector('.vital-card');
-      return card ? card.offsetWidth + 24 : 400; // width + gap
+      return card ? Math.max(0, (track.clientWidth - card.offsetWidth) / 2) : 0;
+    }
+
+    function initInfiniteCarousel() {
+      if (isCarouselInitialized) return;
+      const track = document.getElementById('vitals-track');
+      if (!track) return;
+
+      const originalCards = Array.from(track.querySelectorAll('.vital-card'));
+      if (originalCards.length !== totalVitalCards) return;
+
+      originalCards.forEach((card, idx) => {
+        card.setAttribute('data-layer-index', idx);
+      });
+
+      // Temporarily remove snapping & smooth scrolling during initial clone injection
+      track.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+      track.style.scrollBehavior = 'auto';
+
+      // Clone sets for continuous infinite looping (Set 0: before, Set 1: middle, Set 2: after)
+      const fragmentBefore = document.createDocumentFragment();
+      const fragmentAfter = document.createDocumentFragment();
+
+      originalCards.forEach((card, idx) => {
+        const cloneBefore = card.cloneNode(true);
+        cloneBefore.id = `vital-card-clone-prev-${idx}`;
+        cloneBefore.setAttribute('data-layer-index', idx);
+        fragmentBefore.appendChild(cloneBefore);
+
+        const cloneAfter = card.cloneNode(true);
+        cloneAfter.id = `vital-card-clone-next-${idx}`;
+        cloneAfter.setAttribute('data-layer-index', idx);
+        fragmentAfter.appendChild(cloneAfter);
+      });
+
+      track.insertBefore(fragmentBefore, track.firstChild);
+      track.appendChild(fragmentAfter);
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      isCarouselInitialized = true;
+      updateCarouselMetrics();
+
+      // Position track so that Layer 1 is centered in the middle of the carousel
+      const centerOffset = getCenterOffset();
+      track.scrollLeft = setWidth - centerOffset;
+      currentVitalIndex = 0;
+      updateActivePill(0);
+
+      // Re-enable snapping and smooth scrolling
+      setTimeout(() => {
+        track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+      }, 50);
+    }
+
+    function updateCarouselMetrics() {
+      const track = document.getElementById('vitals-track');
+      if (!track) return;
+      const card = track.querySelector('.vital-card');
+      if (card) {
+        cardWidth = card.offsetWidth + 24; // 24px gap (gap-6)
+        setWidth = cardWidth * totalVitalCards;
+      }
     }
 
     function scrollVitalsTrack(direction) {
       const track = document.getElementById('vitals-track');
       if (!track) return;
-      const cardWidth = getCardWidth();
-      track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-      
-      currentVitalIndex = Math.max(0, Math.min(totalVitalCards - 1, currentVitalIndex + direction));
+      updateCarouselMetrics();
+
+      const targetScroll = track.scrollLeft + (direction * cardWidth);
+      track.scrollTo({ left: targetScroll, behavior: 'smooth' });
+
+      currentVitalIndex = ((currentVitalIndex + direction) % totalVitalCards + totalVitalCards) % totalVitalCards;
       updateActivePill(currentVitalIndex);
+      checkBoundaryDebounced();
     }
 
-    function jumpToVitalCard(index) {
+    function jumpToVitalCard(targetIndex) {
       const track = document.getElementById('vitals-track');
       if (!track) return;
-      const cards = track.querySelectorAll('.vital-card');
-      if (cards[index]) {
-        cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        currentVitalIndex = index;
-        updateActivePill(index);
+      updateCarouselMetrics();
+
+      // If called from hero wristband tags outside telemetry viewport, bring showcase into view
+      const showcase = document.getElementById('telemetry-showcase');
+      if (showcase) {
+        const rect = showcase.getBoundingClientRect();
+        if (rect.top < -200 || rect.top > window.innerHeight) {
+          showcase.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
+
+      const centerOffset = getCenterOffset();
+
+      // Find closest centered position among the 3 candidate instances (Set 0, Set 1, Set 2)
+      const centerScroll0 = (targetIndex * cardWidth) - centerOffset;
+      const centerScroll1 = (setWidth + (targetIndex * cardWidth)) - centerOffset;
+      const centerScroll2 = ((setWidth * 2) + (targetIndex * cardWidth)) - centerOffset;
+
+      const currentScroll = track.scrollLeft;
+      const candidates = [centerScroll0, centerScroll1, centerScroll2];
+      
+      let closestScroll = candidates[0];
+      let minDistance = Math.abs(candidates[0] - currentScroll);
+
+      for (let i = 1; i < candidates.length; i++) {
+        const dist = Math.abs(candidates[i] - currentScroll);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestScroll = candidates[i];
+        }
+      }
+
+      track.scrollTo({ left: closestScroll, behavior: 'smooth' });
+
+      currentVitalIndex = targetIndex;
+      updateActivePill(targetIndex);
+      checkBoundaryDebounced();
+    }
+
+    let boundaryTimeout;
+    function checkBoundaryDebounced() {
+      clearTimeout(boundaryTimeout);
+      boundaryTimeout = setTimeout(() => {
+        const track = document.getElementById('vitals-track');
+        if (!track || setWidth === 0) return;
+        const centerOffset = getCenterOffset();
+
+        // Reset if scrolled past middle set into trailing clones
+        if (track.scrollLeft >= (setWidth * 2) - centerOffset - (cardWidth / 2)) {
+          track.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+          track.scrollLeft -= setWidth;
+          setTimeout(() => {
+            track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+          }, 40);
+        } 
+        // Reset if scrolled before middle set into leading clones
+        else if (track.scrollLeft < setWidth - centerOffset - (cardWidth / 2)) {
+          track.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+          track.scrollLeft += setWidth;
+          setTimeout(() => {
+            track.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+          }, 40);
+        }
+      }, 420);
     }
 
     function updateActivePill(index) {
@@ -1602,26 +1742,80 @@
           pill.className = 'vital-jump-btn px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 hover:text-white border border-white/5 transition whitespace-nowrap';
         }
       });
+
       const indicator = document.getElementById('vitals-page-indicator');
       if (indicator) {
         indicator.textContent = `Layer 0${index + 1} / 07`;
       }
+
+      // Ensure active pill is visible in container on mobile
+      const pillContainer = document.querySelector('.vital-pill-container');
+      if (pillContainer && pills[index]) {
+        const pill = pills[index];
+        const containerLeft = pillContainer.scrollLeft;
+        const containerRight = containerLeft + pillContainer.offsetWidth;
+        const pillLeft = pill.offsetLeft;
+        const pillRight = pillLeft + pill.offsetWidth;
+        if (pillLeft < containerLeft || pillRight > containerRight) {
+          pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
     }
 
-    // Listen to manual scrolling to update pill highlight
+    // Manual scroll listener (for trackpad, mouse, and touch swipe)
     const trackElem = document.getElementById('vitals-track');
     if (trackElem) {
       let scrollTimeout;
       trackElem.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
-          const cardWidth = getCardWidth();
-          const activeIdx = Math.round(trackElem.scrollLeft / cardWidth);
-          if (activeIdx >= 0 && activeIdx < totalVitalCards) {
-            updateActivePill(activeIdx);
+          updateCarouselMetrics();
+          if (setWidth === 0 || cardWidth === 0) return;
+          const centerOffset = getCenterOffset();
+
+          // Calculate which card is closest to the middle of the carousel viewport
+          const centerScroll = trackElem.scrollLeft + centerOffset;
+          const rawIndex = Math.round(centerScroll / cardWidth);
+          const normalizedIndex = ((rawIndex % totalVitalCards) + totalVitalCards) % totalVitalCards;
+          currentVitalIndex = normalizedIndex;
+          updateActivePill(normalizedIndex);
+
+          // Boundary reset
+          if (trackElem.scrollLeft >= (setWidth * 2) - centerOffset - (cardWidth / 2)) {
+            trackElem.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+            trackElem.scrollLeft -= setWidth;
+            setTimeout(() => {
+              trackElem.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+            }, 40);
+          } else if (trackElem.scrollLeft < setWidth - centerOffset - (cardWidth / 2)) {
+            trackElem.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+            trackElem.scrollLeft += setWidth;
+            setTimeout(() => {
+              trackElem.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+            }, 40);
           }
-        }, 100);
+        }, 90);
       });
+    }
+
+    window.addEventListener('resize', () => {
+      updateCarouselMetrics();
+    });
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initInfiniteCarousel);
+    } else {
+      initInfiniteCarousel();
+    }
+
+    window.addEventListener('resize', () => {
+      updateCarouselMetrics();
+    });
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initInfiniteCarousel);
+    } else {
+      initInfiniteCarousel();
     }
 
     // Tab Switcher Logic for Companion App Mockup
