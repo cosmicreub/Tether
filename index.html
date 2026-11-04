@@ -116,21 +116,21 @@
       -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 85%);
     }
 
-    /* Prevent mobile horizontal page viewport shifting */
+    /* Prevent mobile horizontal page viewport shifting without restricting pinch/desktop zoom */
     @media (max-width: 1023px) {
       header nav {
         display: none !important;
       }
     }
     html {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-      width: 100% !important;
+      overflow-x: hidden;
+      overflow-x: clip;
+      max-width: 100%;
     }
     body {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-      width: 100% !important;
+      overflow-x: hidden;
+      overflow-x: clip;
+      max-width: 100%;
       position: relative;
     }
   </style>
@@ -1787,13 +1787,6 @@
         pillContainer.scrollTo({ left: targetScroll, behavior: 'smooth' });
       }
     }
-
-    // Safety guard: guarantee the document window is strictly locked to horizontal position 0
-    window.addEventListener('scroll', () => {
-      if (window.scrollX !== 0) {
-        window.scrollTo(0, window.scrollY);
-      }
-    }, { passive: true });
 
     window.addEventListener('resize', () => {
       updateCarouselMetrics();
