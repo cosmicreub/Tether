@@ -117,6 +117,11 @@
     }
 
     /* Prevent mobile horizontal page viewport shifting */
+    @media (max-width: 1023px) {
+      header nav {
+        display: none !important;
+      }
+    }
     html {
       overflow-x: hidden !important;
       max-width: 100% !important;
@@ -148,20 +153,23 @@
       <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-xs uppercase tracking-wider font-semibold text-zinc-400 absolute left-1/2 -translate-x-1/2 whitespace-nowrap flex-nowrap">
         <a href="#product" class="hover:text-white transition">Product</a>
         <a href="#telemetry-showcase" class="hover:text-white transition">7 Layers</a>
-        <a href="#hardware" class="hover:text-white transition">Hardware</a>
         <a href="#why-tether" class="hover:text-white transition">Why Tether</a>
+        <a href="#hardware" class="hover:text-white transition">Hardware</a>
         <a href="#tether-app" class="hover:text-white transition">App</a>
         <a href="#plans" class="hover:text-white transition">Plans</a>
         <a href="#founders" class="hover:text-white transition">Founders</a>
       </nav>
 
       <!-- Top Right Action Buttons -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <button onclick="goToInvestors()" class="text-xs font-semibold text-zinc-400 hover:text-white transition px-2 py-1.5 sm:px-3 sm:py-2 flex items-center gap-1.5 cursor-pointer">
-          <span class="hidden sm:inline">Investors</span>
-          <i data-lucide="file-text" class="w-3.5 h-3.5 text-zinc-500"></i>
-        </button>
-        <button onclick="goToWaitlist()" class="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs font-bold text-white bg-accent hover:bg-accent-hover shadow-lg shadow-accent/20 transition cursor-pointer">
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <a href="survey.html" class="text-xs font-semibold text-zinc-300 hover:text-white transition px-1.5 py-1 sm:px-3 sm:py-2 flex items-center gap-1.5 cursor-pointer group shrink-0">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+          </span>
+          <span class="font-semibold text-white group-hover:text-accent transition">Survey</span>
+        </a>
+        <button onclick="goToWaitlist()" class="inline-flex items-center gap-1 sm:gap-2 px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold text-white bg-accent hover:bg-accent-hover shadow-lg shadow-accent/20 transition cursor-pointer shrink-0">
           <span>Join Waitlist</span>
           <i data-lucide="arrow-right" class="w-3 sm:w-3.5 h-3 sm:h-3.5"></i>
         </button>
@@ -205,21 +213,6 @@
         <a href="#product" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 border border-white/10 font-semibold text-sm rounded-xl transition flex items-center justify-center gap-2">
           <span>Explore Product</span>
           <i data-lucide="sparkles" class="w-4 h-4 text-accent"></i>
-        </a>
-      </div>
-
-      <!-- Tether Research Survey Hook -->
-      <div class="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3">
-        <a href="survey.html" class="group inline-flex items-center gap-2.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-zinc-950/80 hover:bg-zinc-900 border border-accent/30 hover:border-accent text-zinc-300 hover:text-white transition-all shadow-lg hover:shadow-accent/20 hover:scale-[1.02]">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-          </span>
-          <span class="text-xs sm:text-sm font-bold text-white group-hover:text-accent transition">Survey</span>
-          <span class="w-1 h-1 rounded-full bg-zinc-600 hidden sm:inline-block"></span>
-          <span class="text-xs sm:text-sm text-zinc-400 group-hover:text-zinc-200 transition">Help shape the future of Tether</span>
-          <span class="text-[11px] font-medium text-accent/90">(~5 mins)</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-accent group-hover:translate-x-0.5 transition-transform"></i>
         </a>
       </div>
 
@@ -813,67 +806,7 @@
 
     </section>
 
-    <!-- ================= HARDWARE ARCHITECTURE ================= -->
-    <section id="hardware" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-24 border-t border-white/[0.06]">
-      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-gradient text-accent text-xs font-semibold tracking-wide uppercase mb-3">
-          <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-          <span>HARDWARE ARCHITECTURE</span>
-        </div>
-        <h2 class="text-2xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
-          Engineered for Reliability
-        </h2>
-        <p class="text-zinc-400 text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed">
-          Discreetly concealed under soft, skin-friendly woven fabric—continuous medical-grade reliability without daily maintenance chores.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-        
-        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
-            <i data-lucide="zap" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
-          </div>
-          <h4 class="text-sm sm:text-base font-display font-bold text-white">Dual-Vector Fall Sensing</h4>
-          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
-            6-Axis IMU paired with a micro-barometric altimeter detects sudden drops with a 30-second cancel countdown.
-          </p>
-        </div>
-
-        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
-            <i data-lucide="radio" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
-          </div>
-          <h4 class="text-sm sm:text-base font-display font-bold text-white">Passive NFC Medical ID</h4>
-          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
-            Passive ISO 14443 chip readable at 0% battery. First responders tap their smartphone for instant triage access.
-          </p>
-        </div>
-
-        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
-            <i data-lucide="fingerprint" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
-          </div>
-          <h4 class="text-sm sm:text-base font-display font-bold text-white">Centred Tactile SOS</h4>
-          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
-            A single textured safety-orange button allows blind, tactile emergency triggering with smartphone BLE calling relay.
-          </p>
-        </div>
-
-        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
-            <i data-lucide="thermometer" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
-          </div>
-          <h4 class="text-sm sm:text-base font-display font-bold text-white">Clinical Telemetry</h4>
-          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
-            Continuous optical PPG and dual precision thermistors track resting HR, blood pressure trends, and early fever spikes.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 4. WHY TETHER ================= -->
+    <!-- ================= 3. WHY TETHER ================= -->
     <section id="why-tether" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-24 border-t border-white/[0.06]">
       <div id="competition" class="-mt-24 pt-24"></div>
       <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
@@ -944,6 +877,66 @@
             <i data-lucide="check" class="w-3.5 h-3.5"></i> Tether: Dual-layer fall detection & emergency alerts
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. HARDWARE ARCHITECTURE ================= -->
+    <section id="hardware" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-24 border-t border-white/[0.06]">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full badge-gradient text-accent text-xs font-semibold tracking-wide uppercase mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+          <span>HARDWARE ARCHITECTURE</span>
+        </div>
+        <h2 class="text-2xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+          Engineered for Reliability
+        </h2>
+        <p class="text-zinc-400 text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed">
+          Discreetly concealed under soft, skin-friendly woven fabric—continuous medical-grade reliability without daily maintenance chores.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        
+        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
+            <i data-lucide="zap" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
+          </div>
+          <h4 class="text-sm sm:text-base font-display font-bold text-white">Dual-Vector Fall Sensing</h4>
+          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
+            6-Axis IMU paired with a micro-barometric altimeter detects sudden drops with a 30-second cancel countdown.
+          </p>
+        </div>
+
+        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
+            <i data-lucide="radio" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
+          </div>
+          <h4 class="text-sm sm:text-base font-display font-bold text-white">Passive NFC Medical ID</h4>
+          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
+            Passive ISO 14443 chip readable at 0% battery. First responders tap their smartphone for instant triage access.
+          </p>
+        </div>
+
+        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
+            <i data-lucide="fingerprint" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
+          </div>
+          <h4 class="text-sm sm:text-base font-display font-bold text-white">Centred Tactile SOS</h4>
+          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
+            A single textured safety-orange button allows blind, tactile emergency triggering with smartphone BLE calling relay.
+          </p>
+        </div>
+
+        <div class="bg-dark-card orange-card-border p-4 sm:p-6 rounded-xl sm:rounded-2xl relative group hover:border-accent/40 transition-all duration-300">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition">
+            <i data-lucide="thermometer" class="w-4 h-4 sm:w-5 sm:h-5 text-accent"></i>
+          </div>
+          <h4 class="text-sm sm:text-base font-display font-bold text-white">Clinical Telemetry</h4>
+          <p class="text-zinc-400 text-xs mt-1.5 sm:mt-2 leading-relaxed">
+            Continuous optical PPG and dual precision thermistors track resting HR, blood pressure trends, and early fever spikes.
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -1080,15 +1073,15 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
         <!-- B2C Plan: Tether Guardian -->
-        <div class="bg-dark-card border border-accent/40 p-5 sm:p-8 rounded-2xl relative shadow-xl shadow-accent/5 flex flex-col justify-between">
+        <div class="bg-dark-card border border-white/[0.08] hover:border-accent hover:shadow-[0_16px_40px_-8px_rgba(255,90,31,0.25)] hover:-translate-y-1 p-5 sm:p-8 rounded-2xl relative flex flex-col justify-between transition-all duration-300 group">
           <div>
             <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-accent text-white uppercase tracking-wider">Direct to Family</span>
-              <span class="text-[11px] text-accent font-medium flex items-center gap-1">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-accent/15 text-accent border border-accent/30 group-hover:bg-accent group-hover:text-white uppercase tracking-wider transition-colors">Direct to Family</span>
+              <span class="text-[11px] text-zinc-400 group-hover:text-accent font-medium flex items-center gap-1 transition-colors">
                 <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Annual Subscription
               </span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-display font-bold text-white mt-3 sm:mt-4">Tether Guardian</h3>
+            <h3 class="text-xl sm:text-2xl font-display font-bold text-white mt-3 sm:mt-4 group-hover:text-white transition-colors">Tether Guardian</h3>
             <p class="text-zinc-400 text-xs mt-1">Complete protection for parents living independently.</p>
             
             <div class="mt-4 sm:mt-6 flex items-baseline gap-2">
@@ -1096,15 +1089,15 @@
               <span class="text-zinc-500 text-xs font-medium">/ subscription model</span>
             </div>
             <p class="text-[11px] text-accent font-medium mt-1.5 flex items-center gap-1.5">
-              <i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Includes physical Tether band + full 1-year companion access
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-accent shrink-0"></i> Includes physical Tether band + full 1-year companion access
             </p>
             
             <ul class="mt-4 sm:mt-6 space-y-2.5 sm:space-y-3 text-xs text-zinc-300">
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> <strong>Physical Tether Band</strong> hardware included</li>
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> 1-Year access to family companion network</li>
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Dual-vector autonomous fall response</li>
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Find My integration & instant GPS relay</li>
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Tap-to-read emergency NFC triage passport</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="watch" class="w-3.5 h-3.5 text-accent shrink-0"></i> <strong>Physical Tether Band</strong> hardware included</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="users" class="w-3.5 h-3.5 text-accent shrink-0"></i> 1-Year access to family companion network</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="shield-alert" class="w-3.5 h-3.5 text-accent shrink-0"></i> Dual-vector autonomous fall response</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent shrink-0"></i> Find My integration & instant GPS relay</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="radio" class="w-3.5 h-3.5 text-accent shrink-0"></i> Tap-to-read emergency NFC triage passport</li>
             </ul>
           </div>
           
@@ -1117,35 +1110,35 @@
         </div>
 
         <!-- B2B Enterprise: Tether Enterprise -->
-        <div class="bg-dark-card orange-card-border p-5 sm:p-8 rounded-2xl relative flex flex-col justify-between">
+        <div class="bg-dark-card border border-white/[0.08] hover:border-accent hover:shadow-[0_16px_40px_-8px_rgba(255,90,31,0.25)] hover:-translate-y-1 p-5 sm:p-8 rounded-2xl relative flex flex-col justify-between transition-all duration-300 group">
           <div>
             <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-zinc-800 text-zinc-300 border border-white/10 uppercase tracking-wider">Enterprise Care</span>
-              <span class="text-[11px] text-zinc-400 font-medium flex items-center gap-1">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-zinc-800 text-zinc-300 border border-white/10 group-hover:border-accent/40 group-hover:text-accent uppercase tracking-wider transition-colors">Enterprise Care</span>
+              <span class="text-[11px] text-zinc-400 group-hover:text-accent font-medium flex items-center gap-1 transition-colors">
                 <i data-lucide="building-2" class="w-3.5 h-3.5"></i> Annual Contract
               </span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-display font-bold text-white mt-3 sm:mt-4">Tether Enterprise</h3>
+            <h3 class="text-xl sm:text-2xl font-display font-bold text-white mt-3 sm:mt-4 group-hover:text-white transition-colors">Tether Enterprise</h3>
             <p class="text-zinc-400 text-xs mt-1">For memory care communities and assisted living facilities.</p>
             
             <div class="mt-4 sm:mt-6 flex items-baseline gap-2">
               <span class="text-3xl sm:text-4xl font-extrabold text-white font-display">Custom</span>
               <span class="text-zinc-500 text-xs font-medium">/ annual resident licence</span>
             </div>
-            <p class="text-[11px] text-zinc-400 font-medium mt-1.5 flex items-center gap-1.5">
-              <i data-lucide="check" class="w-3.5 h-3.5 text-zinc-400"></i> Volume deployments with centralised care consoles
+            <p class="text-[11px] text-zinc-400 group-hover:text-accent font-medium mt-1.5 flex items-center gap-1.5 transition-colors">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-accent shrink-0"></i> Volume deployments with centralised care consoles
             </p>
 
             <ul class="mt-4 sm:mt-6 space-y-2.5 sm:space-y-3 text-xs text-zinc-300">
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Central nurse triage station dashboard</li>
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Bulk band deployment & replacements</li>
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> EHR integration and clinical audit logs</li>
-              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Automated room-level wander & fall dispatch</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="layout-dashboard" class="w-3.5 h-3.5 text-accent shrink-0"></i> Central nurse triage station dashboard</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="boxes" class="w-3.5 h-3.5 text-accent shrink-0"></i> Bulk band deployment & replacements</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="file-check-2" class="w-3.5 h-3.5 text-accent shrink-0"></i> EHR integration and clinical audit logs</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="bell-ring" class="w-3.5 h-3.5 text-accent shrink-0"></i> Automated room-level wander & fall dispatch</li>
             </ul>
           </div>
 
           <div class="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-white/[0.08]">
-            <button onclick="goToWaitlist('Senior Living Facility (Tether Enterprise)')" class="w-full py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-white/10 text-white text-xs font-bold font-display transition flex items-center justify-center gap-2 cursor-pointer">
+            <button onclick="goToWaitlist('Senior Living Facility (Tether Enterprise)')" class="w-full py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 group-hover:border-accent/40 border border-white/10 text-white text-xs font-bold font-display transition flex items-center justify-center gap-2 cursor-pointer">
               <span>Enquire for Enterprise Pilot</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-accent"></i>
             </button>
@@ -1189,9 +1182,9 @@
               <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
               <span>WhatsApp: +852 56434894</span>
             </a>
-            <a href="mailto:reuben.james.chaudhuri@gmail.com" class="flex items-center gap-2.5 text-accent hover:text-accent-hover transition break-all">
+            <a href="mailto:reuben@tetherband.co" class="flex items-center gap-2.5 text-accent hover:text-accent-hover transition break-all">
               <i data-lucide="mail" class="w-4 h-4 shrink-0"></i>
-              <span>Email: reuben.james.chaudhuri@gmail.com</span>
+              <span>Email: reuben@tetherband.co</span>
             </a>
           </div>
         </div>
@@ -1211,9 +1204,9 @@
               <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
               <span>WhatsApp: +852 54401719</span>
             </a>
-            <a href="mailto:aryan.ahluwalia.aa@gmail.com" class="flex items-center gap-2.5 text-accent hover:text-accent-hover transition break-all">
+            <a href="mailto:aryan@tetherband.co" class="flex items-center gap-2.5 text-accent hover:text-accent-hover transition break-all">
               <i data-lucide="mail" class="w-4 h-4 shrink-0"></i>
-              <span>Email: aryan.ahluwalia.aa@gmail.com</span>
+              <span>Email: aryan@tetherband.co</span>
             </a>
           </div>
         </div>
