@@ -1,8 +1,8 @@
-# Executive Synthesis: Field Research Across the Eldercare Triad
+# Executive Synthesis: Field Research Across the Eldercare Ecosystem
 
 > **Document Type:** Qualitative & Quantitative User Research Dossier  
 > **Target Audience:** Investors, Advisory Board, Strategic Partners, and Product Engineering  
-> **Core Framework:** The Eldercare Triad (Wearer, Buyer, Institutional Operator)  
+> **Core Framework:** The Eldercare Stakeholder Ecosystem (Wearer, Buyer, Institutional Operator)  
 > **Brand & Vision:** Tether Health Inc. — Discrete Clinical Telemetry & Autonomous Fall Response  
 
 ---
@@ -20,7 +20,7 @@ Below is the structured breakdown of the critical friction points uncovered by o
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                               THE ELDERCARE TRIAD                                      │
+│                          THE THREE-PILLAR CARE ECOSYSTEM                               │
 │                                                                                        │
 │   THE WEARER (Senior)          THE BUYER (Adult Child)     THE ENTERPRISE (Facility)   │
 │   ───────────────────          ───────────────────────     ─────────────────────────   │
@@ -93,7 +93,7 @@ Below is the structured breakdown of the critical friction points uncovered by o
 | **Business Model** | High initial hardware fee with high churn upon abandonment | Predictable B2C subscription ($30–$50/mo) + B2B Enterprise SaaS per bed |
 
 ### Core Thesis
-1. **Compliance is the Single Point of Failure:** In remote eldercare, technology that isn't worn has zero clinical and commercial value. Tether wins the market by solving the emotional and social friction that causes seniors to reject traditional wearables.
+1. **Decoupling Clinical Vigilance from Family Surveillance:** Traditional remote care treats safety as a zero-sum trade-off: parent dignity is sacrificed through intrusive check-ins to buy caregiver relief. Tether proves safety and dignity are symbiotic—passive telemetry shoulders vigilance quietly in the background, freeing families from chronic anxiety without turning children into wardens.
 2. **Dual-Vector Go-To-Market:**
    * **B2C High-Margin Subscription:** Sold directly to adult children who absorb the cost for immediate psychological relief and safety assurance.
    * **B2B Enterprise Expansion:** Sold to senior living communities, retirement villages, and memory care facilities to cut staffing overhead, lower insurance premiums, and mitigate fall liabilities.
