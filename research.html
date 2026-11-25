@@ -52,7 +52,14 @@
       background: radial-gradient(circle at 50% -10%, rgba(255, 90, 31, 0.22) 0%, rgba(255, 90, 31, 0.06) 40%, rgba(5, 5, 7, 0) 70%);
     }
 
-    /* Technical Dot Grid */
+    /* Full-Page Technical White Dot Grid (Blueprint Background Across Entire Page) */
+    .tech-dot-grid-full {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1.25px, transparent 1.25px);
+      background-size: 26px 26px;
+      background-position: center center;
+    }
+
+    /* Technical Dot Grid for nested cards */
     .tech-dot-grid {
       background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1.25px, transparent 1.25px);
       background-size: 26px 26px;
@@ -72,6 +79,9 @@
   </style>
 </head>
 <body class="bg-[#050507] text-[#E0E2EC] font-sans antialiased min-h-screen flex flex-col relative selection:bg-[#FF5A1F] selection:text-white">
+
+  <!-- Full-Page Technical White Dot Grid (Blueprint Pattern Across Entire Page) -->
+  <div class="fixed inset-0 tech-dot-grid-full pointer-events-none z-0"></div>
 
   <!-- Ambient Top Glow -->
   <div class="absolute top-0 left-0 right-0 h-[500px] hero-glow-conic pointer-events-none z-0"></div>
