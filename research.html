@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tether Labs — Executive Synthesis: Field Research Across the Eldercare Triad</title>
+  <meta name="description" content="Executive qualitative and quantitative field research synthesis across seniors, family caregivers, and institutional healthcare operators.">
+  
+  <!-- Plus Jakarta Sans & Inter Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="tailwind.js"></script>
+  <script>window.tailwind || document.write('<script src="https://cdn.tailwindcss.com"><\/script>')</script>
+  <!-- Lucide Icons -->
+  <script src="lucide.js"></script>
+  <script>window.lucide || document.write('<script src="https://unpkg.com/lucide@latest"><\/script>')</script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            accent: {
+              DEFAULT: '#FF5A1F', // Tether safety orange
+              hover: '#E04810',
+              glow: 'rgba(255, 90, 31, 0.28)',
+              subtle: 'rgba(255, 90, 31, 0.08)',
+            },
+            dark: {
+              base: '#050507',
+              card: '#0c0d12',
+              cardHover: '#12141c',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderAccent: 'rgba(255, 90, 31, 0.35)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Ambient Top Glow */
+    .hero-glow-conic {
+      background: radial-gradient(circle at 50% -10%, rgba(255, 90, 31, 0.22) 0%, rgba(255, 90, 31, 0.06) 40%, rgba(5, 5, 7, 0) 70%);
+    }
+
+    /* Technical Dot Grid */
+    .tech-dot-grid {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1.25px, transparent 1.25px);
+      background-size: 26px 26px;
+      background-position: center center;
+      mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
+    }
+
+    .orange-card-border {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+    .orange-card-border:hover {
+      border-color: rgba(255, 90, 31, 0.4);
+      box-shadow: 0 12px 35px -10px rgba(255, 90, 31, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#050507] text-[#E0E2EC] font-sans antialiased min-h-screen flex flex-col relative selection:bg-[#FF5A1F] selection:text-white">
+
+  <!-- Ambient Top Glow -->
+  <div class="absolute top-0 left-0 right-0 h-[500px] hero-glow-conic pointer-events-none z-0"></div>
+
+  <!-- ================= NAVIGATION HEADER ================= -->
+  <header class="sticky top-0 z-50 w-full border-b border-white/[0.08] backdrop-blur-xl bg-[#050507]/95">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo: Tether Labs -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+        <img src="tetherlogo.png" alt="Tether Logo" class="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.style.display='none'">
+        <span class="font-display font-bold text-base sm:text-lg tracking-wider text-white flex items-center gap-1.5">
+          TETHER <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/30">LABS</span>
+        </span>
+      </a>
+
+      <!-- Center: 2 Header Navigation Tabs -->
+      <nav class="flex items-center gap-1.5 sm:gap-3">
+        <a href="research.html" class="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-white/10 border border-white/15 flex items-center gap-1.5 shadow-sm">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 text-accent"></i>
+          <span>Research</span>
+        </a>
+        <a href="survey.html" class="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold text-zinc-400 hover:text-white hover:bg-white/5 transition flex items-center gap-1.5">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+          </span>
+          <span>Survey</span>
+        </a>
+      </nav>
+
+      <!-- Right: Action / Back to Site -->
+      <div class="flex items-center gap-3 text-xs sm:text-sm text-gray-400">
+        <a href="index.html" class="inline-flex items-center gap-1 text-zinc-400 hover:text-white transition font-medium">
+          <span class="hidden sm:inline">Back to Site</span>
+          <span class="sm:hidden">Exit</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="relative z-10 flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-16">
+    
+    <!-- Hero / Dossier Title -->
+    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/25 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#FF5A1F]"></span>
+        <span>Field Research Dossier</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-tight">
+        Executive Synthesis: The Eldercare Triad
+      </h1>
+      <p class="mt-4 text-sm sm:text-lg text-zinc-400 leading-relaxed">
+        Qualitative and quantitative findings across the three stakeholders in the care continuum: <strong class="text-white">The Wearer</strong> (Senior), <strong class="text-white">The Buyer</strong> (Adult Child), and <strong class="text-white">The Institutional Operator</strong> (Care Facilities & Nurses).
+      </p>
+
+      <!-- Meta Pill Row -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mt-6 text-[11px] sm:text-xs text-zinc-400">
+        <span class="px-3 py-1 rounded-full bg-zinc-900 border border-white/10 flex items-center gap-1.5">
+          <i data-lucide="users" class="w-3.5 h-3.5 text-accent"></i> Core Framework: Eldercare Triad
+        </span>
+        <span class="px-3 py-1 rounded-full bg-zinc-900 border border-white/10 flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent"></i> Audience: Investors & Clinical Engineering
+        </span>
+        <span class="px-3 py-1 rounded-full bg-zinc-900 border border-white/10 flex items-center gap-1.5">
+          <i data-lucide="activity" class="w-3.5 h-3.5 text-accent"></i> Tether Health Inc. Research
+        </span>
+      </div>
+    </div>
+
+    <!-- Executive Overview Statement Block -->
+    <div class="p-6 sm:p-8 rounded-2xl bg-zinc-950/80 border border-white/[0.08] backdrop-blur-xl relative overflow-hidden mb-12 sm:mb-16 shadow-xl">
+      <div class="absolute inset-0 tech-dot-grid pointer-events-none z-0"></div>
+      <div class="relative z-10 space-y-3">
+        <span class="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-wider">Executive Overview</span>
+        <h2 class="text-xl sm:text-2xl font-display font-bold text-white">Why Traditional Eldercare Technology Fails</h2>
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+          To build elder safety technology that survives real-world deployment, Tether conducted field research across the three distinct cohorts of the care continuum. Across all three cohorts, traditional market solutions (panic pendants, invasive cameras, consumer smartwatches) fail for the exact same underlying reasons: <strong class="text-white">they treat seniors like hospital patients, turn adult children into nagging wardens, and overwhelm care staff with false alarms.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- ================= THE ELDERCARE TRIAD VISUAL CONSOLE ================= -->
+    <div class="mb-14 sm:mb-20">
+      <div class="text-center mb-6">
+        <span class="text-[11px] sm:text-xs font-bold text-zinc-400 uppercase tracking-widest">Architectural Framework</span>
+        <h3 class="text-lg sm:text-xl font-display font-bold text-white mt-1">The Eldercare Triad Breakdown</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        
+        <!-- Cohort 1: The Wearer -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-zinc-950/70 border border-white/[0.08] relative space-y-3 hover:border-accent/40 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-accent px-2 py-0.5 rounded bg-accent/10 border border-accent/20">Cohort 01</span>
+            <i data-lucide="user" class="w-4 h-4 text-accent"></i>
+          </div>
+          <h4 class="text-base font-display font-bold text-white">The Wearer (Senior)</h4>
+          <ul class="space-y-1.5 text-xs text-zinc-400">
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Rejects clinical stigma & badges</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Deliberately conceals health scares</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Daily charging & touchscreen friction</li>
+          </ul>
+        </div>
+
+        <!-- Cohort 2: The Buyer -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-zinc-950/70 border border-white/[0.08] relative space-y-3 hover:border-accent/40 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-accent px-2 py-0.5 rounded bg-accent/10 border border-accent/20">Cohort 02</span>
+            <i data-lucide="heart" class="w-4 h-4 text-accent"></i>
+          </div>
+          <h4 class="text-base font-display font-bold text-white">The Buyer (Adult Child)</h4>
+          <ul class="space-y-1.5 text-xs text-zinc-400">
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Chronic vigilance anxiety & dread</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Trapped in "Warden vs. Patient" calls</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> #1 fear: Parent refuses to wear it</li>
+          </ul>
+        </div>
+
+        <!-- Cohort 3: The Enterprise -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-zinc-950/70 border border-white/[0.08] relative space-y-3 hover:border-accent/40 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-accent px-2 py-0.5 rounded bg-accent/10 border border-accent/20">Cohort 03</span>
+            <i data-lucide="building-2" class="w-4 h-4 text-accent"></i>
+          </div>
+          <h4 class="text-base font-display font-bold text-white">The Enterprise (Facility)</h4>
+          <ul class="space-y-1.5 text-xs text-zinc-400">
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Crushing manual vitals rounds</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Severe alert fatigue from bed sensors</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="x" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i> Delayed discovery of unobserved falls</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Connector to Tether Solution -->
+      <div class="mt-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-accent/15 via-orange-950/20 to-accent/15 border border-accent/30 text-center">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-accent">The Unified Tether Solution</span>
+        <p class="text-xs sm:text-sm font-medium text-white mt-1">
+          Discreet screenless fabric band · Passive clinical telemetry · Autonomous fall detection · Privacy-governed NFC emergency passport · Prioritised triage
+        </p>
+      </div>
+    </div>
+
+    <!-- ================= 1. THE WEARER ================= -->
+    <section class="py-10 border-t border-white/[0.06] space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/25 flex items-center justify-center text-accent font-bold text-sm">1</span>
+        <div>
+          <span class="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-wider">The Wearer (The Senior)</span>
+          <h3 class="text-xl sm:text-2xl font-display font-bold text-white">The Stigma & Secret Scare Trap</h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        <!-- Lived Reality -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-white/[0.06] space-y-3.5">
+          <div class="text-xs font-bold uppercase text-rose-400 tracking-wider flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> The Lived Reality
+          </div>
+          <div class="space-y-3 text-xs text-zinc-300 leading-relaxed">
+            <p>
+              <strong class="text-white">The "Secret Scare" Phenomenon:</strong> Field interviews reveal that seniors living alone frequently experience dizziness, orthostatic blood pressure drops, or minor slips in high-risk zones (such as bathrooms or getting out of bed at night). Crucially, <em>they deliberately keep these incidents secret from their adult children</em>. They fear that reporting a scare will trigger panic, emotional distress, or a loss of independence (e.g. being forced to move into assisted living).
+            </p>
+            <p>
+              <strong class="text-white">The Device Stigma Barrier:</strong> Seniors overwhelmingly reject traditional emergency pendants, lanyards, and bulky "panic buttons." Wearing an obvious plastic beeper feels infantilising and acts as a visible public badge of frailty. When forced to adopt them, seniors leave them on nightstands or in drawers where they are useless during a crisis.
+            </p>
+            <p>
+              <strong class="text-white">The Usability & Charging Burden:</strong> Existing smartwatches require daily charging, complex touchscreen navigation, and ongoing Bluetooth pairing. For an ageing senior with reduced dexterity or mild cognitive decline, daily charging routines fail rapidly, leading to permanent device abandonment.
+            </p>
+          </div>
+        </div>
+
+        <!-- How Tether Actively Solves It -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-accent/20 space-y-3.5">
+          <div class="text-xs font-bold uppercase text-accent tracking-wider flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-4 h-4"></i> How Tether Solves It
+          </div>
+          <div class="space-y-3 text-xs text-zinc-300 leading-relaxed">
+            <p>
+              <strong class="text-white">Tenet I — Senior Dignity & Zero-Stigma Hardware:</strong> Tether is engineered as a discreet, screenless fabric band resembling high-end textile apparel rather than a medical appliance. There is no screen to cause anxiety or confusion, and no public stigma. Neighbours and peers simply see a stylish woven band.
+            </p>
+            <p>
+              <strong class="text-white">Autonomous, Passive Background Protection:</strong> The wearer is never required to remember to press a button during acute trauma, syncope, or a debilitating fall. Tether’s passive biometrics and dual-vector fall detection run quietly in the background without patronising the senior.
+            </p>
+            <p>
+              <strong class="text-white">Weekly-Plus Battery Life & True 24/7 Wearability:</strong> By removing power-draining colour displays and utilising ultra-low-power edge processing, Tether eliminates the daily charging chore. It is waterproof (IP68) and breathable, remaining on the senior's wrist where falls actually happen: in the shower and during nighttime bathroom visits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. THE BUYER ================= -->
+    <section class="py-10 border-t border-white/[0.06] space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/25 flex items-center justify-center text-accent font-bold text-sm">2</span>
+        <div>
+          <span class="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-wider">The Buyer (The Adult Child)</span>
+          <h3 class="text-xl sm:text-2xl font-display font-bold text-white">The "Warden vs. Patient" Paradox</h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        <!-- Lived Reality -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-white/[0.06] space-y-3.5">
+          <div class="text-xs font-bold uppercase text-rose-400 tracking-wider flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> The Lived Reality
+          </div>
+          <div class="space-y-3 text-xs text-zinc-300 leading-relaxed">
+            <p>
+              <strong class="text-white">Chronic Vigilance Burnout:</strong> Adult children who live in another neighbourhood, city, or country carry constant background anxiety. An unanswered phone call or unread message immediately triggers catastrophic dread (<em>"Did they collapse? Are they lying helpless on the floor?"</em>).
+            </p>
+            <p>
+              <strong class="text-white">The "Warden vs. Patient" Trap:</strong> Because there is no passive safety net, the adult child is forced into constant, intrusive check-ins (<em>"Did you fall? What was your blood pressure? How is your temperature?"</em>). This dynamic strips the senior of self-respect, creates mutual resentment, and reduces loving parent-child relationships into administrative interrogations.
+            </p>
+            <p>
+              <strong class="text-white">Parent Refusal as the #1 Commercial Barrier:</strong> Adult children represent the paying customer with high willingness-to-pay ($30–$50/month subscription). However, their single greatest hesitation before purchasing is: <em class="text-zinc-200">"My parent will refuse to wear it, and it will end up sitting in a drawer."</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- How Tether Actively Solves It -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-accent/20 space-y-3.5">
+          <div class="text-xs font-bold uppercase text-accent tracking-wider flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-4 h-4"></i> How Tether Solves It
+          </div>
+          <div class="space-y-3 text-xs text-zinc-300 leading-relaxed">
+            <p>
+              <strong class="text-white">Tenet II — Caregiver Autonomy & Relationship Restoration:</strong> Tether liberates the adult child from vigilance anxiety. With continuous passive monitoring, no news is genuinely good news. When the child calls, it is to catch up as a loving son or daughter, not to audit daily survival. Both generations regain personal freedom and peace of mind.
+            </p>
+            <p>
+              <strong class="text-white">Wearer Compliance Drives Real Commercial ROI:</strong> Because Tether solves the dignity and aesthetic problem for the senior, wearer compliance remains near 100%. The adult child can confidently purchase a subscription knowing the hardware will actually be worn.
+            </p>
+            <p>
+              <strong class="text-white">Tenet III — Emergency NFC Passport & Community Safety Net:</strong> In an emergency, adult children are often hours away. Tether’s integrated NFC passport enables any first responder, hospital physician, or bystander to tap the band with a smartphone and instantly access vital allergies, chronic conditions, and emergency contacts—turning the surrounding community into a respectful safety net.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. THE INSTITUTIONAL OPERATOR ================= -->
+    <section class="py-10 border-t border-white/[0.06] space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/25 flex items-center justify-center text-accent font-bold text-sm">3</span>
+        <div>
+          <span class="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-wider">The Institutional Operator (Nurses & Care Facilities)</span>
+          <h3 class="text-xl sm:text-2xl font-display font-bold text-white">Workflow Efficiency & Liability Mitigation</h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        <!-- Lived Reality -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-white/[0.06] space-y-3.5">
+          <div class="text-xs font-bold uppercase text-rose-400 tracking-wider flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> The Lived Reality
+          </div>
+          <div class="space-y-3 text-xs text-zinc-300 leading-relaxed">
+            <p>
+              <strong class="text-white">Crushing Routine Workload:</strong> In assisted living and senior care facilities, staffing shortages mean 1 nurse or care assistant is often responsible for 15 to 30+ residents. Routine manual vitals rounds (blood pressure, temperature, pulse) consume 1 to 2 hours per shift, pulling skilled staff away from direct, high-acuity patient care.
+            </p>
+            <p>
+              <strong class="text-white">The Delayed Discovery Window:</strong> Unobserved falls during night shifts remain an acute liability. A resident who falls and remains undiscovered on the floor for 30+ minutes faces severe complications (hypothermia, rhabdomyolysis, pressure sores, prolonged hospitalisation), leading to immense family distress and costly regulatory penalties.
+            </p>
+            <p>
+              <strong class="text-white">Alert Fatigue & Distrust of Legacy Tech:</strong> Facilities frequently experience bed sensors, chair pads, and motion detectors triggering high rates of false alarms. Over time, care teams suffer from alarm fatigue and become desensitised, slowing response times across the board.
+            </p>
+          </div>
+        </div>
+
+        <!-- How Tether Actively Solves It -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-accent/20 space-y-3.5">
+          <div class="text-xs font-bold uppercase text-accent tracking-wider flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-4 h-4"></i> How Tether Solves It
+          </div>
+          <div class="space-y-3 text-xs text-zinc-300 leading-relaxed">
+            <p>
+              <strong class="text-white">Automated Telemetry Rounds:</strong> Tether passively logs vital trends 24/7. This cuts manual vitals rounds in half, liberating nursing hours while providing continuous physiological baselines that flag early deterioration hours before an acute collapse.
+            </p>
+            <p>
+              <strong class="text-white">Immediate Fall Triage & Liability Reduction:</strong> Autonomous impact and disorientation detection alerts the central nursing station immediately when an incident occurs. This closes the hazardous delayed discovery window, drastically improving recovery outcomes and safeguarding institutional compliance.
+            </p>
+            <p>
+              <strong class="text-white">Centralised Multi-Resident Dashboard:</strong> Instead of noisy, localized buzzers, ward managers receive high-fidelity, prioritised alerts routed to centralised station monitors or mobile staff devices, minimising false positives and eliminating alert fatigue.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. STRATEGIC COMPARISON MATRIX ================= -->
+    <section class="py-10 border-t border-white/[0.06] space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-wider">Comparative Analysis</span>
+        <h3 class="text-xl sm:text-3xl font-display font-bold text-white mt-1">Strategic Comparison for Stakeholders</h3>
+        <p class="text-xs sm:text-sm text-zinc-400 mt-1.5">How Tether re-engineers remote care dynamics against legacy hardware.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.08] bg-zinc-950/70">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-white/10 bg-white/[0.02]">
+              <th class="p-3.5 sm:p-4 text-zinc-400 font-semibold uppercase tracking-wider text-[10px]">Strategic Dimension</th>
+              <th class="p-3.5 sm:p-4 text-zinc-400 font-semibold uppercase tracking-wider text-[10px]">Legacy Tech (LifeAlert, Smartwatches, Cameras)</th>
+              <th class="p-3.5 sm:p-4 text-accent font-bold uppercase tracking-wider text-[10px] bg-accent/5">The Tether Platform</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.06] text-zinc-300">
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-white">Primary Design Philosophy</td>
+              <td class="p-3.5 sm:p-4 text-zinc-400">Utilitarian medical appliance or complex consumer gadget</td>
+              <td class="p-3.5 sm:p-4 text-white font-medium bg-accent/5">Screenless, dignity-first apparel with passive clinical telemetry</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-white">Wearer Compliance</td>
+              <td class="p-3.5 sm:p-4 text-zinc-400">Extremely low (abandoned in drawers due to stigma & daily charging)</td>
+              <td class="p-3.5 sm:p-4 text-emerald-400 font-medium bg-accent/5">High compliance (lightweight, zero-stigma fabric, multi-day battery)</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-white">Caregiver Relationship</td>
+              <td class="p-3.5 sm:p-4 text-zinc-400">Intrusive surveillance; breeds friction ("Warden vs. Patient")</td>
+              <td class="p-3.5 sm:p-4 text-white font-medium bg-accent/5">Passive peace of mind; restores healthy parent-child relationship</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-white">Emergency Data Access</td>
+              <td class="p-3.5 sm:p-4 text-zinc-400">Siloed in proprietary call centres or locked behind smartphone passcodes</td>
+              <td class="p-3.5 sm:p-4 text-white font-medium bg-accent/5">Open, privacy-governed NFC Passport accessible via any smartphone</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-white">Business Model</td>
+              <td class="p-3.5 sm:p-4 text-zinc-400">High initial hardware fee with high churn upon abandonment</td>
+              <td class="p-3.5 sm:p-4 text-white font-medium bg-accent/5">Predictable B2C subscription ($30–$50/mo) + B2B Enterprise SaaS per bed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= 5. CORE THESIS ================= -->
+    <section class="py-10 border-t border-white/[0.06] space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-wider">Thesis & Growth</span>
+        <h3 class="text-xl sm:text-3xl font-display font-bold text-white mt-1">Core Strategic Thesis</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-white/[0.06] space-y-2.5">
+          <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/25 flex items-center justify-center text-accent font-bold text-xs">
+            01
+          </div>
+          <h4 class="text-sm sm:text-base font-display font-bold text-white">Compliance is the Single Point of Failure</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            In remote eldercare, technology that isn't worn has zero clinical and commercial value. Tether wins the market by solving the emotional and social friction that causes seniors to reject traditional wearables.
+          </p>
+        </div>
+
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-white/[0.06] space-y-2.5">
+          <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/25 flex items-center justify-center text-accent font-bold text-xs">
+            02
+          </div>
+          <h4 class="text-sm sm:text-base font-display font-bold text-white">Dual-Vector Go-To-Market</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Direct-to-consumer subscriptions sold to adult children for immediate psychological relief, alongside B2B enterprise expansions into retirement villages and memory care communities to cut staffing overhead.
+          </p>
+        </div>
+
+        <div class="p-5 sm:p-6 rounded-2xl bg-dark-card border border-white/[0.06] space-y-2.5">
+          <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/25 flex items-center justify-center text-accent font-bold text-xs">
+            03
+          </div>
+          <h4 class="text-sm sm:text-base font-display font-bold text-white">Absolute Guardrail Alignment</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Tether never claims to "promote" solitary living—independent ageing is an inevitable demographic reality caused by urbanization and family dispersal. Tether exists solely to make this existing reality safer and dignified.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= BOTTOM ACTION BANNER ================= -->
+    <div class="mt-8 p-6 sm:p-10 rounded-2xl sm:rounded-3xl bg-zinc-950 border border-accent/30 text-center space-y-4 relative overflow-hidden shadow-2xl">
+      <div class="absolute inset-0 tech-dot-grid pointer-events-none z-0"></div>
+      <div class="relative z-10 max-w-xl mx-auto space-y-3">
+        <h3 class="text-xl sm:text-3xl font-display font-extrabold text-white">Help Shape Our Ongoing Research</h3>
+        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+          Are you an adult child caregiver, senior, or healthcare professional? Your field feedback directly guides our firmware thresholds and form factor.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="survey.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-accent hover:bg-accent-hover text-white text-xs font-bold font-display transition shadow-lg shadow-accent/25 flex items-center justify-center gap-2">
+            <span>Take Usability Survey</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="index.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-white/10 text-xs font-semibold font-display transition flex items-center justify-center gap-2">
+            <span>Explore Commercial Platform</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative z-10 w-full border-t border-white/[0.06] py-8 text-center text-xs text-gray-500">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-bold text-gray-400">TETHER LABS</span>
+        <span>•</span>
+        <span>Discrete Clinical Telemetry & Autonomous Fall Response</span>
+      </div>
+      <div>
+        © 2026 Tether Health Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
